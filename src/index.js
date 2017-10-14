@@ -7,12 +7,14 @@ let w; // Browser window
 
 app.on('ready', () => {
 	w = new BrowserWindow({
-		center: true,
 		minWidth: 500,
 		minHeight: 500,
 		resizable: true,
 		fullscreenable: true,
-		backgroundColor: '#000'
+		backgroundColor: '#000',
+
+		width: 1000,
+		height: 800
 	});
 	w.loadURL(url.format({
 		pathname: path.join(__dirname + '/app', 'index.html'),
