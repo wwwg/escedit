@@ -7,6 +7,7 @@ let w, // Browser window
 	session; // escedit session in which saves are loaded
 
 app.on('ready', () => {
+	// Set up Electron window
 	w = new BrowserWindow({
 		minWidth: 500,
 		minHeight: 500,
@@ -28,6 +29,9 @@ app.on('ready', () => {
 	w.on('closed', () => {
 		w = null;
 	});
+	// Start session
+	session = new Session();
+	session.load(session);
 });
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
