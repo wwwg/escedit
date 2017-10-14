@@ -32,14 +32,24 @@ const SaveContent = class SaveContent {
 					// Assignment with multiple = chars, join the rest back together
 					vvalue = parts.slice(1).join('=');
 				}
-				// Variables are split into arrays with an "@" char as a deliminator
-				if (vvalue.includes('@')) {
+				if (!isNaN(vvalue)) {
+					// Convert to number as needed
+					vvalue = parseFloat(vvalue);
+				} else if (vvalue.includes('@')) {
+					// Variables are split into arrays with an "@" char as a deliminator
 					vvalue = vvalue.split('@');
+					for (let j = 0; j < vvalue.length; ++j) {
+						if (!isNaN(vvalue[j])) {
+							// Convert to number as needed
+							vvalue[j] = parseFloat(vvalue[j]);
+						}
+					}
 				}
 				// Assign the value on the AST
 				this.tree[lastc][vname] = vvalue;
 			}
 		}
+		console.log(this.tree);
 	}
 }
 
