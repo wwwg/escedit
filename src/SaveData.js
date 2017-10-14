@@ -20,7 +20,6 @@ const MCrypt = require('mcrypt').MCrypt,
 			bf.open(key, bf.generateIv());
 			this.dec = bf.decrypt(this.raw);
 			console.log('Decrypted save ' + this.num + " (length: " + this.dec.length + ")");
-			console.log(this.raw.constructor);
 		}
 	}
 module.exports = SaveData;
