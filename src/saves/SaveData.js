@@ -1,5 +1,5 @@
-const key = require('../lib/Key'),
-	crypto = require('crypto'),
+let key = require('../lib/Key');
+const crypto = require('crypto'),
 	MCrypt = require('mcrypt').MCrypt,
 	fss = require('../lib/fss'),
 	SaveContent = require('./SaveContent'),
@@ -10,20 +10,27 @@ const key = require('../lib/Key'),
 			}
 			this.raw = rawSave;
 			this.num = saveNum;
+		}
+		decrypt() {
+			// NOTE: this method MUST be called on the electron main thread due to a double-free bug in v8
+			let raw = this.raw;
 			// Compute the amount of padding needed in order for the algorithm to accept the string
-			let raw = rawSave,
-				padding = (8 - (raw.length % 8)) % 8;
+			let padding = (8 - (raw.length % 8)) % 8;
 			// Append the padding accordingly in null bytes
 			for (var i = 0; i < padding; ++i) {
 				raw += '\0';
 			}
-			const decipher = new MCrypt('blowfish-compat', 'ecb');
+			// Decrypt
+			let decipher = new MCrypt('blowfish-compat', 'ecb');
+			let data = new Buffer(raw, 'binary');
+			let _key = new Buffer(key, 'binary');
 			decipher.validateKeySize(false);
-			decipher.open(key);
-			let dec = decipher.decrypt(raw);
-			console.log(new Buffer(dec).toString('utf8'));
+			decipher.open(_key);
+			let dec = decipher.decrypt(data); // Double-free is caused here on the electron renderer process
+			dec = new Buffer(dec).toString('utf8');
+			decipher = null;
+			return dec;
 		}
-		/*
 		export() {
 			// Serializes and encrypts the save file back into a buffer
 			const serialized = this.cont.serialize(),
@@ -34,6 +41,5 @@ const key = require('../lib/Key'),
 			let out = bf.encrypt(buf);
 			return out;
 		}
-		*/
 	}
 module.exports = SaveData;

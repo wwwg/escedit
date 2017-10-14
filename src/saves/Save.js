@@ -26,6 +26,7 @@ Save.prototype.load = async s => {
 	s.loaded = true;
 	s.num = s.path.charAt(s.path.length - 1);
 	s.data = new SaveData(s.rawSave, s.num);
+	s.data.decrypt();
 }
 // Constants
 Save.NAME_FILE = 'mname.dat';

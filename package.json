@@ -11,6 +11,6 @@
 	},
 	"devDependencies": {
 		"electron": "1.7.9",
-		"mcrypt": "~0.1.12"
+		"mcrypt": "*"
 	}
 }
