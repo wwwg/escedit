@@ -17,7 +17,9 @@ Save.prototype.load = async s => {
 	console.log(s.content);
 	if (!s.content.includes(Save.NAME_FILE) ||
 		!s.content.includes(Save.SAVE_FILE)) {
-		throw new Error("Corrupt save file");
+		// throw new Error("Corrupt save file");
+		console.log("WARN: Not loading invalid save file with path '" + s.path + "'.");
+		s.loaded = false;
 		return;
 	}
 	s.rawSave = await fss.read(s.path + '/' + Save.SAVE_FILE);

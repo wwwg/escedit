@@ -17,6 +17,8 @@ const Save = require('./Save'),
 			// Successfully loaded, add to array
 			console.log("Loaded save " + num + ":", save.content);
 			s.saves.push(save);
+		} else {
+			console.log("Failed to load save " + num + ". Moving on.");
 		}
 		return save;
 	}
