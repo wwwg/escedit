@@ -13,4 +13,7 @@ const fss = require('./lib/fss'),
 Save.prototype.load = async s => {
 	s.content = await fss.readDir(s.path);
 }
+// Constants
+Save.NAME_FILE = 'mname.dat';
+Save.SAVE_FILE = 'save.dat'; // Encrypted via Blowfish compat ECB
 module.exports = Save;
