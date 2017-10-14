@@ -3,7 +3,8 @@ const ENABLE_DEV_TOOLS = true,
 	url = require('url'),
 	path = require('path'),
 	{ app, BrowserWindow } = require('electron');
-let w; // Browser window
+let w, // Browser window
+	session; // escedit session in which saves are loaded
 
 app.on('ready', () => {
 	w = new BrowserWindow({
