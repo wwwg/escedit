@@ -1,6 +1,7 @@
 const MCrypt = require('mcrypt').MCrypt,
 	key = require('./lib/Key'),
 	fss = require('./lib/fss'),
+	SaveContent = require('./SaveContent'),
 	SaveData = class SaveData {
 		constructor(rawSave, saveNum) {
 			if (!rawSave instanceof Buffer) {
@@ -20,6 +21,8 @@ const MCrypt = require('mcrypt').MCrypt,
 			bf.open(key, bf.generateIv());
 			this.dec = bf.decrypt(this.raw);
 			console.log('Decrypted save ' + this.num + " (length: " + this.dec.length + ")");
+			// Parse save into an AST for easy manipulation
+			this.cont = new SaveContent(this.dec);
 		}
 	}
 module.exports = SaveData;
