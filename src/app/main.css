@@ -8,3 +8,9 @@ html, body {
 	font-family: Ubuntu;
 	background-color: #000;
 }
+h1 {
+	font-size: 350%;
+}
+sec-start {
+	display: inline-block;
+}
