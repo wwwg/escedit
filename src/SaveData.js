@@ -8,7 +8,4 @@ const Blowfish = require('./lib/Blowfish'),
 			}
 		}
 	}
-SaveData.prototype.load = async s => {
-	// TODO
-}
 module.exports = SaveData;
