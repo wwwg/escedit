@@ -8,11 +8,9 @@
 	"scripts": {
 		"init": "chmod +x ./init.sh && ./init.sh"
 	},
-	"dependencies": {
-		"mcrypt": "*",
-		"electron": "*"
-	},
 	"devDependencies": {
-		"electron-rebuild": "^1.6.0"
+		"electron": "*",
+		"electron-rebuild": "^1.6.0",
+		"mcrypt": "*"
 	}
 }
