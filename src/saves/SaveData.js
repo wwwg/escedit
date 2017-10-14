@@ -1,5 +1,4 @@
-const MCrypt = require('mcrypt').MCrypt,
-	key = require('../lib/Key'),
+const key = require('../lib/Key'),
 	fss = require('../lib/fss'),
 	SaveContent = require('./SaveContent'),
 	SaveData = class SaveData {
@@ -16,6 +15,7 @@ const MCrypt = require('mcrypt').MCrypt,
 				this.raw += '\0';
 			}
 			// Decrypt the save into plaintext
+			/*
 			let bf = new MCrypt('blowfish-compat', 'ecb');
 			bf.validateKeySize(false);
 			bf.open(key, bf.generateIv());
@@ -23,7 +23,9 @@ const MCrypt = require('mcrypt').MCrypt,
 			console.log('Decrypted save ' + this.num + " (length: " + this.dec.length + ")");
 			// Parse save into an AST for easy manipulation
 			this.cont = new SaveContent(this.dec.toString());
+			*/
 		}
+		/*
 		export() {
 			// Serializes and encrypts the save file back into a buffer
 			const serialized = this.cont.serialize(),
@@ -34,5 +36,6 @@ const MCrypt = require('mcrypt').MCrypt,
 			let out = bf.encrypt(buf);
 			return out;
 		}
+		*/
 	}
 module.exports = SaveData;
