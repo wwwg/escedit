@@ -13,7 +13,7 @@ const SaveContent = class SaveContent {
 			if (ln.startsWith('[')) {
 				// Category
 				const cname = ln.substr(1, ln.length - 2); // Extract category name
-				console.log(cname);
+				this.tree[cname] = {}; // Create new object in the tree
 			}
 		}
 	}
