@@ -30,6 +30,7 @@ Save.prototype.load = async s => {
 	s.data = new SaveData(s.rawSave, s.num);
 	const decrypted = s.data.decrypt();
 	s.content = new SaveContent(decrypted);
+	s.nameContent = new SaveContent(s.rawName);
 }
 // Constants
 Save.NAME_FILE = 'mname.dat';
