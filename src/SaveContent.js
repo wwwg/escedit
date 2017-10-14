@@ -5,9 +5,11 @@ const SaveContent = class SaveContent {
 		this.tree = {};
 		this.parse();
 	}
-	parse() {
-		let str = this.str,
-			lns = str.split('\n'),
+	parse(str) {
+		if (!str) {
+			str = this.str;
+		}
+		let lns = str.split('\n'),
 			lastc = ''; // Lazy abbreviation for "lastCategory"
 		for (var i = 0; i < lns.length; ++i) {
 			const ln = lns[i];
