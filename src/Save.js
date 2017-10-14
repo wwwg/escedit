@@ -21,8 +21,8 @@ Save.prototype.load = async s => {
 		s.loaded = false;
 		return;
 	}
-	s.rawSave = await fss.read(s.path + '/' + Save.SAVE_FILE);
-	s.rawName = await fss.read(s.path + '/' + Save.NAME_FILE);
+	s.rawSave = await fss.read(s.path + '/' + Save.SAVE_FILE, 'binary');
+	s.rawName = await fss.read(s.path + '/' + Save.NAME_FILE, 'utf8');
 	s.loaded = true;
 	s.num = s.path.charAt(s.path.length - 1);
 	s.data = new SaveData(s.rawSave, s.num);
