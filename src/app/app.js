@@ -3,6 +3,7 @@ const {
 	dialog
 } = require('electron');
 window.currsav = null; // Current active save
+window.selectedTab = 'select-player'; // Id of current tab selected
 console.log('escedit v0.0.1');
 // Get the session object from main process
 let s = remote.getGlobal("session");

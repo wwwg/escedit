@@ -27,3 +27,7 @@ h1 {
 #sec-edit {
 	display: none;
 }
+.panel-selection {
+	cursor: pointer;
+	font-size: 150%;
+}
