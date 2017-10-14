@@ -82,7 +82,6 @@ const SaveContent = class SaveContent {
 			}
 			out += '\n';
 		}
-		console.log(out);
 		return out;
 	}
 }

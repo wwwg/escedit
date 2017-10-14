@@ -24,5 +24,9 @@ const MCrypt = require('mcrypt').MCrypt,
 			// Parse save into an AST for easy manipulation
 			this.cont = new SaveContent(this.dec.toString());
 		}
+		export() {
+			// Serializes and encrypts the save file back into a buffer
+			const serialized = this.cont.serialize();
+		}
 	}
 module.exports = SaveData;
