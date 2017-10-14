@@ -8,6 +8,12 @@ const Blowfish = require('./lib/Blowfish'),
 			}
 			this.raw = rawSave.toString('utf8');
 			this.num = saveNum;
+			// Compute the amount of padding needed in order for the algorithm to accept the string
+			const padding = (8 - (this.raw.length % 8)) % 8;
+			// Append the padding accordingly in null bytes
+			for (var i = 0; i < padding; ++i) {
+				this.raw += '\0';
+			}
 			// Decrypt the save into plaintext
 			let bf = new Blowfish(key);
 			this.dec = bf.decrypt(this.raw);
