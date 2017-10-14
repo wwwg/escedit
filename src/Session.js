@@ -1,8 +1,10 @@
 const Save = require('./saves/Save'),
 	fss = require('./lib/fss'),
 	os = require('os'),
-	Session = class Session {
+	EventEmitter = require('events');
+class Session extends EventEmitter {
 		constructor() {
+			super();
 			this.saveDir = os.homedir() + "/The Escapists";
 			this.saves = [];
 		}
