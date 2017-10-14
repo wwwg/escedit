@@ -10,12 +10,19 @@ const Save = require('./Save'),
 				.catch(console.log);
 		}
 	}
+	Session.prototype.loadSave = async (s, num) => {
+		const save = new Save(s.saveDir + ("/save" + num));
+		save.load(save);
+		s.saves.push(save);
+		return save;
+	}
 	Session.prototype.load = async s => {
 		s.dirs = await fss.readDir(s.saveDir);
-		if (s.dirs.includes('save1')) {
-			console.log("Loading save 1");
-			const save = new Save(s.saveDir + "/save1");
-			s.saves.push(save);
+		for (var i = 1; i < 4; ++i) {
+			if (s.dirs.includes('save' + 1)) {
+				console.log("Loading save " + i);
+				s.loadSave(s, i);
+			}
 		}
 	}
 module.exports = Session;

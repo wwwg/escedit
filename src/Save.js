@@ -7,7 +7,7 @@ const Save = class Save {
 		}
 	}
 }
-Save.prototype.load = async () => {
-	console.log(this);
+Save.prototype.load = async s => {
+	console.log(s);
 }
 module.exports = Save;
