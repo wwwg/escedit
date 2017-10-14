@@ -10,6 +10,11 @@ const SaveContent = class SaveContent {
 		lns = str.split('\n');
 		for (var i = 0; i < lns.length; ++i) {
 			const ln = lns[i];
+			if (ln.startsWith(' ') ||
+				ln.startsWith('\n')) {
+				// Skip whitespace
+				continue;
+			}
 			if (ln.startsWith('[')) {
 				// Category
 				const cname = ln.substr(1, ln.length - 2); // Extract category name
