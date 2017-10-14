@@ -20,7 +20,7 @@ s.on('load', () => {
 					Name: <b id="save${saveNumber}-name"></b><br>
 					Day: <b>${day}</b><br>
 					Map: <b>${map}</b><br>
-				</div>
+				</div><br>
 			`);
 		$("#save-list").append(saveElem);
 		$(`#save${saveNumber}-name`).text(pname); // To avoid odd XSS issues
