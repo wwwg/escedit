@@ -23,5 +23,10 @@ s.on('load', () => {
 			`);
 		$("#save-list").append(saveElem);
 		$(`#save${saveNumber}-name`).text(pname); // To avoid odd XSS issues
+		saveElem.click(e => {
+			const savNum = parseInt(e.target.id.charAt(e.target.id.length - 1));
+			console.log(`Save number ${savNum} was selected.`);
+			const save = s.saves[savNum - 1];
+		});
 	}
 });
