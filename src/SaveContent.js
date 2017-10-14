@@ -14,8 +14,7 @@ const SaveContent = class SaveContent {
 				ln.startsWith('\n')) {
 				// Skip whitespace
 				continue;
-			}
-			if (ln.startsWith('[')) {
+			} else if (ln.startsWith('[')) {
 				// Category
 				const cname = ln.substr(1, ln.length - 2); // Extract category name
 				this.tree[cname] = {}; // Create new object in the tree
