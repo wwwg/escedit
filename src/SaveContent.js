@@ -79,6 +79,7 @@ const SaveContent = class SaveContent {
 					out += `${vval}\n`;
 				}
 			}
+			out += '\n';
 		}
 		console.log(out);
 		return out;
