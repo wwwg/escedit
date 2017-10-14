@@ -32,7 +32,12 @@ const SaveContent = class SaveContent {
 					// Assignment with multiple = chars, join the rest back together
 					vvalue = parts.slice(1).join('=');
 				}
-				this.tree[lastc][vname] = vvalue; // Assign the value on the AST
+				// Variables are split into arrays with an "@" char as a deliminator
+				if (vvalue.includes('@')) {
+					vvalue = vvalue.split('@');
+				}
+				// Assign the value on the AST
+				this.tree[lastc][vname] = vvalue;
 			}
 		}
 	}
