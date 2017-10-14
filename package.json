@@ -10,7 +10,7 @@
 		"start": "clear && electron ."
 	},
 	"devDependencies": {
-		"electron": "*",
+		"electron": "1.7.9",
 		"electron-rebuild": "^1.6.0",
 		"mcrypt": "*"
 	}
