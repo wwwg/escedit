@@ -1,4 +1,5 @@
 const Blowfish = require('./lib/Blowfish'),
+	fss = require('./lib/fss'),
 	SaveData = class SaveData {
 		constructor(rawSave) {
 			if (!rawSave instanceof Buffer) {
