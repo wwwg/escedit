@@ -12,9 +12,8 @@ const Save = require('./Save'),
 	}
 	Session.prototype.loadSave = async (s, num) => {
 		const save = new Save(s.saveDir + ("/save" + num));
-		save.load(save);
-		console.log("Loaded save " + num + " with content:");
-		console.log(save.content);
+		await save.load(save);
+		console.log("Loaded save " + num + ":", save.content);
 		s.saves.push(save);
 		return save;
 	}
@@ -22,7 +21,7 @@ const Save = require('./Save'),
 		s.dirs = await fss.readDir(s.saveDir);
 		for (var i = 1; i < 4; ++i) {
 			if (s.dirs.includes('save' + i)) {
-				console.log("Loading save " + i);
+				console.log("Loading save " + i + "...");
 				s.loadSave(s, i);
 			}
 		}
