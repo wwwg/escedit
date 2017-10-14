@@ -7,7 +7,8 @@ const SaveContent = class SaveContent {
 	}
 	parse() {
 		let str = this.str,
-		lns = str.split('\n');
+			lns = str.split('\n'),
+			lastc = ''; // Lazy abbreviation for "lastCategory"
 		for (var i = 0; i < lns.length; ++i) {
 			const ln = lns[i];
 			if (ln.startsWith(' ') ||
@@ -18,6 +19,20 @@ const SaveContent = class SaveContent {
 				// Category
 				const cname = ln.substr(1, ln.length - 2); // Extract category name
 				this.tree[cname] = {}; // Create new object in the tree
+				console.log("Category '" + cname + "':");
+			} else if (ln.includes('=')) {
+				// Variable assignment within category
+				let parts = ln.split('='),
+					vname = parts[0],
+					vvalue;
+				if (parts.length == 2) {
+					// Assignment with only one = char
+					vvalue = parts[1];
+				} else {
+					// Assignment with multiple = chars, join the rest back together
+					vvalue = parts.slice(1).join('=');
+				}
+				console.log('-	Assignment: "' + vname + '" == "' + vvalue + '"');
 			}
 		}
 	}
