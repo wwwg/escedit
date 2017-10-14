@@ -22,4 +22,10 @@ app.on('ready', () => {
 	if (ENABLE_DEV_TOOLS) {
 		w.webContents.openDevTools();
 	}
+	w.on('closed', () => {
+		w = null;
+	});
+});
+app.on('window-all-closed', () => {
+	if (process.platform != 'darwin') app.quit();
 });
