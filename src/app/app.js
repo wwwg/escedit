@@ -18,7 +18,7 @@ s.on('load', () => {
 			saveElem = $(`
 				<div id="save${saveNumber}" class="save">
 					Name: <b id="save${saveNumber}-name"></b><br>
-					Day: <b id="save${saveNumber}">${day}</b><br>
+					Day <b id="save${saveNumber}">#${day}</b><br>
 					Map: <b id="save${saveNumber}">${map}</b><br>
 				</div><br>
 			`);
