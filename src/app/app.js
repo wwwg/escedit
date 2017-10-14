@@ -63,7 +63,8 @@ let launchEditor = () => {
 	setTimeout(() => {
 		$("#sec-edit").fadeIn(400);
 	}, 310);
-	$("#title").text("Save #" + currsav.num);
+	$("#title").text("escedit - editing save #" + currsav.num);
+	$("#title").css("font-size", "250%");
 	// The player tab is the default tab
 	selectedTab = $("#player");
 	selectedTab.fadeIn(200);
