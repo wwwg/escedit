@@ -82,6 +82,9 @@ const SaveContent = class SaveContent {
 			}
 			out += '\n';
 		}
+		// Align by 8 bytes so the save can be re-encrypted via blowfish-compat
+		let padding = (8 - (out.length % 8)) % 8;
+		out += ('\0'.repeat(padding));
 		return out;
 	}
 }
