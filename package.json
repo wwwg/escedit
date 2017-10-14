@@ -4,6 +4,7 @@
 	"version": "0.0.1",
 	"author": "ww",
 	"license": "MIT",
+	"main": "src/index.js",
 	"scripts": {
 		"init": "chmod +x ./init.sh && ./init.sh"
 	},
