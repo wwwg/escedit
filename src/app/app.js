@@ -47,8 +47,10 @@ s.on('load', () => {
 		oldTab.fadeOut(200);
 		$(e.target).css("border-bottom", "2px solid #FFF");
 		$(e.target).css("color", "#FFF");
+		$(e.target).css("font-weight", "bold");
 		$("#select-" + oldTab[0].id).css("border-bottom", "");
 		$("#select-" + oldTab[0].id).css("color", "#bfbfbf");
+		$("#select-" + oldTab[0].id).css("font-weight", "normal");
 		setTimeout(() => {
 			selectedTab.fadeIn(200);
 		}, 210);
@@ -71,4 +73,5 @@ let launchEditor = () => {
 	// Underline and highlight player tab
 	$("#select-player").css("border-bottom", "2px solid #FFF");
 	$("#select-player").css("color", "#FFF");
+	$("#select-player").css("font-weight", "bold");
 }

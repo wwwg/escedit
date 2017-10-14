@@ -32,3 +32,10 @@ h1 {
 	color: #bfbfbf;
 	font-size: 150%;
 }
+.panel-select {
+	display: inline-block;
+	margin-bottom: 5%;
+}
+.select-tab {
+	margin-top: 3%;
+}
