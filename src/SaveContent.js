@@ -58,6 +58,9 @@ const SaveContent = class SaveContent {
 		}
 		return this.tree;
 	}
+	serialize() {
+		// TODO
+	}
 }
 
 module.exports = SaveContent;
