@@ -66,10 +66,14 @@ const SaveContent = class SaveContent {
 			out += `[${cat}]\n`;
 			for (const vname in this.tree[cat]) {
 				let vval = this.tree[cat][vname];
-				out += `${vname.toString()}=`;
+				if (Number.isInteger(out)) {
+					out += `${(vname + 1).toString()}=`;
+				} else {
+					out += `${vname.toString()}=`;
+				}
 				if (vval instanceof Array) {
 					// Convert array back into "@" deliminated string
-					out += `${vval.join('@')}\n`;
+					out += `${vval.reverse().join('@')}\n`;
 				} else {
 					// Append the raw value to the line
 					out += `${vval}\n`;
