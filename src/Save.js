@@ -24,6 +24,7 @@ Save.prototype.load = async s => {
 	s.rawSave = await fss.read(s.path + '/' + Save.SAVE_FILE);
 	s.rawName = await fss.read(s.path + '/' + Save.NAME_FILE);
 	s.loaded = true;
+	s.data = new SaveData(s.rawSave);
 }
 // Constants
 Save.NAME_FILE = 'mname.dat';
