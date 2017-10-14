@@ -5,3 +5,4 @@ const SaveData = class SaveData {
 		}
 	}
 }
+module.exports = SaveData;
