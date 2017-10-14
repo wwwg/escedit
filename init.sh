@@ -6,4 +6,5 @@ if [ "$node_version" != "v8.7.0" ]; then
 	exit 0
 fi
 clear
-node --harmony src/index.js
+# node --harmony src/index.js
+./node_modules/electron/dist/electron .

@@ -11,5 +11,8 @@
 	"dependencies": {
 		"mcrypt": "*",
 		"electron": "*"
+	},
+	"devDependencies": {
+		"electron-rebuild": "^1.6.0"
 	}
 }
