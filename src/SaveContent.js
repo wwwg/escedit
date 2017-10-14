@@ -76,7 +76,7 @@ const SaveContent = class SaveContent {
 					out += `${vval.reverse().join('@')}\n`;
 				} else {
 					// Append the raw value to the line
-					out += `${vval}\n`;
+					out += `${vval.toString()}\n`;
 				}
 			}
 			out += '\n';
