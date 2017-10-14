@@ -42,7 +42,7 @@ s.on('load', () => {
 	});
 	$(".panel-selection").click(e => {
 		// Change tabs
-		let oldTab = $("#" + selectedTab.id.split('-')[1]);
+		let oldTab = selectedTab;
 		selectedTab = $("#" + e.target.id.split('-')[1]);
 		oldTab.fadeOut(200);
 		setTimeout(() => {
@@ -60,5 +60,5 @@ let launchEditor = () => {
 		$("#sec-edit").fadeIn(400);
 	}, 310);
 	$("#title").text("Save #" + currsav.num);
-	selectedTab = $("#select-player")[0];
+	selectedTab = $("#player");
 }
