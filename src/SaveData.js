@@ -6,7 +6,7 @@ const Blowfish = require('./lib/Blowfish'),
 			if (!rawSave instanceof Buffer) {
 				throw new Error("SaveData must be constructed with a raw buffer.");
 			}
-			this.raw = rawSave.toString('utf8');
+			this.raw = rawSave.toString();
 			this.num = saveNum;
 			// Compute the amount of padding needed in order for the algorithm to accept the string
 			const padding = (8 - (this.raw.length % 8)) % 8;
@@ -15,7 +15,7 @@ const Blowfish = require('./lib/Blowfish'),
 				this.raw += '\0';
 			}
 			// Decrypt the save into plaintext
-			let bf = new Blowfish(key);
+			let bf = new Blowfish(key, 'ecb');
 			this.dec = bf.decrypt(this.raw);
 			console.log('Decrypted save ' + this.num + " (length: " + this.dec.length + ")");
 			console.log(this.dec);
