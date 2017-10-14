@@ -41,6 +41,15 @@ s.on('load', () => {
 		launchEditor();
 	});
 });
+$(".panel-selection").click(e => {
+	// Change tabs
+	let oldTab = $("#" + selectedTab.id.split('-')[1]);
+	selectedTab = $("#" + e.target.id.split('-')[1]);
+	oldTab.fadeOut(200);
+	setTimeout(() => {
+		selectedTab.fadeIn(200);
+	}, 210);
+});
 let launchEditor = () => {
 	if (!currsav) {
 		throw new Error("Current save doesn't exist, something went terribly wrong.");

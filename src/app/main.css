@@ -24,7 +24,7 @@ h1 {
 	cursor: pointer;
 	margin-bottom: 1%;
 }
-#sec-edit {
+#sec-edit, .select-tab {
 	display: none;
 }
 .panel-selection {
