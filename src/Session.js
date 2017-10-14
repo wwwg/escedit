@@ -5,9 +5,6 @@ const Save = require('./saves/Save'),
 		constructor() {
 			this.saveDir = os.homedir() + "/The Escapists";
 			this.saves = [];
-			console.log('Reading saves directory "' + this.saveDir + '"');
-			this.load.call(this, this)
-				.catch(console.log);
 		}
 	}
 	Session.prototype.loadSave = async (s, num) => {
@@ -23,6 +20,7 @@ const Save = require('./saves/Save'),
 		return save;
 	}
 	Session.prototype.load = async s => {
+		console.log('Reading saves directory "' + s.saveDir + '"');
 		s.dirs = await fss.readDir(s.saveDir);
 		for (var i = 1; i < 4; ++i) {
 			if (s.dirs.includes('save' + i)) {
