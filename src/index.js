@@ -29,9 +29,6 @@ app.on('ready', () => {
 	w.on('closed', () => {
 		w = null;
 	});
-	// Start session
-	session = new Session();
-	session.load(session);
 });
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
