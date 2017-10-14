@@ -3,14 +3,11 @@ const fs = require('fs'),
 		static dirExists(dirname) {
 			return new Promise((resolve, reject) => {
 				fs.stat(dirname, (err, stats) => {
-					if (err) {
-						reject(err);
+					if (err || !stats.isDirectory()) {
+						resolve(false);
 						return;
 					}
-					if (!stats.isDirectory()) {
-						reject(new Error("Not a directory"));
-						return;
-					}
+					resolve(true);
 				});
 			});
 		}
