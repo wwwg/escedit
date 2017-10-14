@@ -18,17 +18,22 @@ s.on('load', () => {
 			saveElem = $(`
 				<div id="save${saveNumber}" class="save">
 					Name: <b id="save${saveNumber}-name"></b><br>
-					Day: <b>${day}</b><br>
-					Map: <b>${map}</b><br>
+					Day: <b id="save${saveNumber}">${day}</b><br>
+					Map: <b id="save${saveNumber}">${map}</b><br>
 				</div><br>
 			`);
 		$("#save-list").append(saveElem);
 		$(`#save${saveNumber}-name`).text(pname); // To avoid odd XSS issues
-		saveElem.click(e => {
-			const savNum = parseInt(e.target.id.charAt(e.target.id.length - 1));
-			console.log(`Save number ${savNum} was selected.`);
-			const save = s.saves[savNum - 1];
-			currsav = save;
-		});
 	}
+	$(".save").click(e => {
+		let target = e.target,
+			saveNum = -1;
+		if (isNaN(target.id.charAt(target.id.length - 1))) {
+			target = target.parentElement;
+		}
+		savNum = parseInt(target.id.charAt(target.id.length - 1));
+		console.log(`Save number ${savNum} was selected.`);
+		const save = s.saves[savNum - 1];
+		currsav = save;
+	});
 });
