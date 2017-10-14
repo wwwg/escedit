@@ -48,6 +48,10 @@ const SaveContent = class SaveContent {
 						}
 					}
 				}
+				// Convert variable name to number if needed
+				if (!isNaN(vname)) {
+					vname = parseFloat(vname);
+				}
 				// Assign the value on the AST
 				this.tree[lastc][vname] = vvalue;
 			}
