@@ -6,7 +6,8 @@
 	"license": "MIT",
 	"main": "src/index.js",
 	"scripts": {
-		"init": "chmod +x ./init.sh && ./init.sh"
+		"init": "chmod +x ./init.sh && ./init.sh",
+		"start": "clear && electron ."
 	},
 	"devDependencies": {
 		"electron": "*",
