@@ -14,4 +14,12 @@ app.on('ready', () => {
 		fullscreenable: true,
 		backgroundColor: '#000'
 	});
+	w.loadURL(url.format({
+		pathname: path.join(__dirname + '/app', 'index.html'),
+		protocol: 'file:',
+		slashes: true
+	}));
+	if (ENABLE_DEV_TOOLS) {
+		w.webContents.openDevTools();
+	}
 });
