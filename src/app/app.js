@@ -40,15 +40,15 @@ s.on('load', () => {
 		currsav = save;
 		launchEditor();
 	});
-});
-$(".panel-selection").click(e => {
-	// Change tabs
-	let oldTab = $("#" + selectedTab.id.split('-')[1]);
-	selectedTab = $("#" + e.target.id.split('-')[1]);
-	oldTab.fadeOut(200);
-	setTimeout(() => {
-		selectedTab.fadeIn(200);
-	}, 210);
+	$(".panel-selection").click(e => {
+		// Change tabs
+		let oldTab = $("#" + selectedTab.id.split('-')[1]);
+		selectedTab = $("#" + e.target.id.split('-')[1]);
+		oldTab.fadeOut(200);
+		setTimeout(() => {
+			selectedTab.fadeIn(200);
+		}, 210);
+	});
 });
 let launchEditor = () => {
 	if (!currsav) {
