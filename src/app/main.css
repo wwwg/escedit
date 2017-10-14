@@ -11,6 +11,15 @@ html, body {
 h1 {
 	font-size: 350%;
 }
+button {
+	background: none;
+	font-size: 120%;
+	border: 2px solid white;
+	border-radius: 3px;
+	color: white;
+	font-size: 150%;
+	cursor: pointer;
+}
 .sec-start {
 	display: inline-block;
 }
@@ -45,4 +54,9 @@ h1 {
 	left: 50%;
 	transform: translateX(-50%);
 	margin-bottom: 5%;
+}
+#exit {
+	font-size: 250%;
+	border: 3px solid white;
+	border-radius: 4px;
 }
