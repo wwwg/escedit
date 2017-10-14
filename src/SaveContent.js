@@ -12,7 +12,8 @@ const SaveContent = class SaveContent {
 			const ln = lns[i];
 			if (ln.startsWith('[')) {
 				// Category
-				console.log("Category:", ln);
+				const cname = ln.substr(1, ln.length - 2); // Extract category name
+				console.log(cname);
 			}
 		}
 	}
