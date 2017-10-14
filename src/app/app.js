@@ -24,6 +24,8 @@ s.on('load', () => {
 			`);
 		$("#save-list").append(saveElem);
 		$(`#save${saveNumber}-name`).text(pname); // To avoid odd XSS issues
+		saveElem.hide();
+		saveElem.fadeIn(800 + (i * 250));
 	}
 	$(".save").click(e => {
 		let target = e.target,
