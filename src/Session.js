@@ -5,10 +5,12 @@ const SaveData = require('./SaveData'),
 		constructor() {
 			this.saveDir = os.homedir() + "/The Escapists";
 			console.log('Reading saves directory "' + this.saveDir + '"');
-			this.load.call(this).catch(console.log);
+			this.load.apply(this, arguments)
+				.catch(console.log);
 		}
 	}
 	Session.prototype.load = async () => {
+		console.log(this.saveDir);
 		this.savePaths = await fss.readDir(this.saveDir);
 	}
 module.exports = Session;
