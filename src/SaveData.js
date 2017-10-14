@@ -1,4 +1,5 @@
 const Blowfish = require('./lib/Blowfish'),
+	key = require('./lib/Key'),
 	fss = require('./lib/fss'),
 	SaveData = class SaveData {
 		constructor(rawSave) {
