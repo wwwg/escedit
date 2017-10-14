@@ -6,6 +6,9 @@ const Blowfish = require('./lib/Blowfish'),
 			if (!rawSave instanceof Buffer) {
 				throw new Error("SaveData must be constructed with a raw buffer.");
 			}
+			this.raw = rawSave;
+			// Decrypt the save into plaintext
+			let bf = new Blowfish(key);
 		}
 	}
 module.exports = SaveData;
