@@ -22,7 +22,7 @@ const MCrypt = require('mcrypt').MCrypt,
 			this.dec = bf.decrypt(this.raw);
 			console.log('Decrypted save ' + this.num + " (length: " + this.dec.length + ")");
 			// Parse save into an AST for easy manipulation
-			this.cont = new SaveContent(this.dec);
+			this.cont = new SaveContent(this.dec.toString());
 		}
 	}
 module.exports = SaveData;
