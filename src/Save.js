@@ -15,6 +15,7 @@ Save.prototype.load = async s => {
 	if (!s.content.includes(Save.NAME_FILE) ||
 		!s.content.includes(Save.SAVE_FILE)) {
 		throw new Error("Corrupt save file");
+		return;
 	}
 }
 // Constants
