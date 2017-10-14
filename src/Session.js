@@ -3,7 +3,7 @@ const SaveData = require('./SaveData'),
 	os = require('os'),
 	Session = class Session {
 		constructor() {
-			// TODO
+			this.saveDir = os.homedir() + "/The Escapists";
 		}
 	}
 module.exports = Session;
