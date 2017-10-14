@@ -13,8 +13,11 @@ const Save = require('./Save'),
 	Session.prototype.loadSave = async (s, num) => {
 		const save = new Save(s.saveDir + ("/save" + num));
 		await save.load(save);
-		console.log("Loaded save " + num + ":", save.content);
-		s.saves.push(save);
+		if (save.loaded) {
+			// Successfully loaded, add to array
+			console.log("Loaded save " + num + ":", save.content);
+			s.saves.push(save);
+		}
 		return save;
 	}
 	Session.prototype.load = async s => {
