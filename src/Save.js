@@ -11,6 +11,6 @@ const fss = require('./lib/fss'),
 		}
 	}
 Save.prototype.load = async s => {
-	s.content = fss.readDir(s.path);
+	s.content = await fss.readDir(s.path);
 }
 module.exports = Save;
