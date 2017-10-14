@@ -34,12 +34,10 @@ const SaveContent = class SaveContent {
 					// Assignment with multiple = chars, join the rest back together
 					vvalue = parts.slice(1).join('=');
 				}
-				if (!isNaN(vvalue) && !vvalue.includes('_') && vvalue !== '') {
-					// Convert to number as needed
-					vvalue = parseFloat(vvalue);
-				} else if (vvalue.includes('@')) {
+				if (vvalue.includes('@')) {
 					// Variables are split into arrays with an "@" char as a deliminator
 					vvalue = vvalue.split('@');
+					/*
 					for (let j = 0; j < vvalue.length; ++j) {
 						if (!isNaN(vvalue[j]) && !vvalue.includes('_')) {
 							// Convert to number as needed
@@ -49,11 +47,14 @@ const SaveContent = class SaveContent {
 							}
 						}
 					}
+					*/
 				}
+				/*
 				// Convert variable name to number if needed
 				if (!isNaN(vname)) {
 					vname = parseFloat(vname);
 				}
+				*/
 				// Assign the value on the AST
 				this.tree[lastc][vname] = vvalue;
 			}
