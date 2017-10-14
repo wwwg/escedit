@@ -9,6 +9,7 @@
 		"init": "chmod +x ./init.sh && ./init.sh"
 	},
 	"dependencies": {
-		"mcrypt": "*"
+		"mcrypt": "*",
+		"electron": "*"
 	}
 }
