@@ -46,4 +46,5 @@ let launchEditor = () => {
 		return;
 	}
 	$("#sec-start").fadeOut(300);
+	$("#title").text("Save #" + currsav.num);
 }
