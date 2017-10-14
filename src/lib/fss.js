@@ -11,6 +11,17 @@ const fs = require('fs'),
 				});
 			});
 		}
+		static fileExists(path) {
+			return new Promise((resolve, reject) => {
+				fs.stat(path, (err, stats) => {
+					if (err || stats.isDirectory()) {
+						resolve(false);
+						return;
+					}
+					resolve(true);
+				});
+			});
+		}
 		static read(path) {
 			return new Promise((resolve, reject) => {
 				fs.readFile(path, (err, data) => {
