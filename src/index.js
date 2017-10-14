@@ -1,1 +1,2 @@
-const SaveData = require('./SaveData');
+const Session = require('./Session'),
+	s = new Session();
