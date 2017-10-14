@@ -22,15 +22,26 @@ const fs = require('fs'),
 				});
 			});
 		}
-		static read(path) {
+		static read(path, encoding = "utf8") {
 			return new Promise((resolve, reject) => {
-				fs.readFile(path, (err, data) => {
+				fs.readFile(path, encoding, (err, data) => {
 					if (err) {
 						reject(err);
 						return;
 					}
 					resolve(data);
 				});
+			});
+		}
+		static write(path, data) {
+			return new Promise((resolve, reject) => {
+				fs.writeFile(path, data, err => {
+					if (err) {
+						reject(err);
+						return;
+					}
+					resolve(true);
+				})
 			});
 		}
 	}
