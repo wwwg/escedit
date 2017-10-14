@@ -26,7 +26,13 @@ const MCrypt = require('mcrypt').MCrypt,
 		}
 		export() {
 			// Serializes and encrypts the save file back into a buffer
-			const serialized = this.cont.serialize();
+			const serialized = this.cont.serialize(),
+				buf = Buffer.from(serialized, 'utf8'),
+				crypt = new MCrypt('blowfish-compat', 'ecb');
+			bf.validateKeySize(false);
+			bf.open(key, bf.generateIv());
+			let out = bf.encrypt(buf);
+			return out;
 		}
 	}
 module.exports = SaveData;
