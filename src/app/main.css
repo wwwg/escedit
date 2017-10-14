@@ -11,6 +11,14 @@ html, body {
 h1 {
 	font-size: 350%;
 }
-sec-start {
+.sec-start {
+	display: inline-block;
+}
+.save {
+	border: 3px solid white;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 120%;
+	text-align: center;
 	display: inline-block;
 }
