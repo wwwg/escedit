@@ -15,10 +15,10 @@ h1 {
 	display: inline-block;
 }
 .save {
-	border: 3px solid white;
+	border: 2px solid white;
 	padding: 10px;
 	border-radius: 5px;
-	font-size: 120%;
+	font-size: 150%;
 	text-align: center;
 	display: inline-block;
 	cursor: pointer;
