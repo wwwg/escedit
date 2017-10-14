@@ -1,3 +1,1 @@
-const Session = require('../Session');
-let s = new Session;
-s.load(s);
+console.log('escedit v0.0.1');
