@@ -56,7 +56,7 @@ const SaveContent = class SaveContent {
 				this.tree[lastc][vname] = vvalue;
 			}
 		}
-		console.log(this.tree);
+		return this.tree;
 	}
 }
 
