@@ -35,5 +35,13 @@ s.on('load', () => {
 		console.log(`Save number ${savNum} was selected.`);
 		const save = s.saves[savNum - 1];
 		currsav = save;
+		launchEditor();
 	});
 });
+let launchEditor = () => {
+	if (!currsav) {
+		throw new Error("Current save doesn't exist, something went terribly wrong.");
+		return;
+	}
+	$("#sec-start").fadeOut(300);
+}
