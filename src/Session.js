@@ -31,7 +31,7 @@ class Session extends EventEmitter {
 			}
 		}
 		setTimeout(() => {
-			s.emit("loaded");
-		}, 50);
+			s.emit("load");
+		}, 500);
 	}
 module.exports = Session;
