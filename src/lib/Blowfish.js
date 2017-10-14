@@ -950,3 +950,6 @@ Blowfish.sBox3 = [
   0x01c36ae4, 0xd6ebe1f9, 0x90d4f869, 0xa65cdea0, 0x3f09252d, 0xc208e69f,
   0xb74e6132, 0xce77e25b, 0x578fdfe3, 0x3ac372e6
 ];
+
+// Export module for usage in node
+module.exports = Blowfish;
