@@ -61,7 +61,11 @@ const SaveContent = class SaveContent {
 		return this.tree;
 	}
 	serialize() {
-		// TODO
+		let out = '';
+		for (const cat in this.tree) {
+			out += `[${cat}]\n`;
+		}
+		return out;
 	}
 }
 
