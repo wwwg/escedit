@@ -24,3 +24,6 @@ h1 {
 	cursor: pointer;
 	margin-bottom: 1%;
 }
+#sec-edit {
+	display: none;
+}
