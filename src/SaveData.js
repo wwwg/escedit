@@ -17,7 +17,7 @@ const Blowfish = require('./lib/Blowfish'),
 			// Decrypt the save into plaintext
 			let bf = new Blowfish(key);
 			this.dec = bf.decrypt(this.raw);
-			console.log('Decrypted save #' + this.num);
+			console.log('Decrypted save ' + this.num + " (length: " + this.dec.length + ")");
 		}
 	}
 module.exports = SaveData;
