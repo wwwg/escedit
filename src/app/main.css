@@ -29,5 +29,6 @@ h1 {
 }
 .panel-selection {
 	cursor: pointer;
+	color: #bfbfbf;
 	font-size: 150%;
 }

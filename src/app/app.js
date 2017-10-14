@@ -46,7 +46,9 @@ s.on('load', () => {
 		selectedTab = $("#" + e.target.id.split('-')[1]);
 		oldTab.fadeOut(200);
 		$(e.target).css("border-bottom", "2px solid #FFF");
+		$(e.target).css("color", "#FFF");
 		$("#select-" + oldTab[0].id).css("border-bottom", "");
+		$("#select-" + oldTab[0].id).css("color", "#bfbfbf");
 		setTimeout(() => {
 			selectedTab.fadeIn(200);
 		}, 210);
@@ -64,6 +66,8 @@ let launchEditor = () => {
 	$("#title").text("Save #" + currsav.num);
 	// The player tab is the default tab
 	selectedTab = $("#player");
-	// Underline player tab
+	selectedTab.fadeIn(200);
+	// Underline and highlight player tab
 	$("#select-player").css("border-bottom", "2px solid #FFF");
+	$("#select-player").css("color", "#FFF");
 }
