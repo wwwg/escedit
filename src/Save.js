@@ -1,7 +1,7 @@
 // Abstract representation of an entire The Escapists save directory.
 const Save = class Save {
 	constructor(path) {
-		if (!path || !(path instanceof String)) {
+		if (!path) {
 			throw new Error("Save constructed with invalid path.");
 			return;
 		}
