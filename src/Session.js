@@ -1,4 +1,4 @@
-const Save = require('./Save'),
+const Save = require('./saves/Save'),
 	fss = require('./lib/fss'),
 	os = require('os'),
 	Session = class Session {

@@ -1,5 +1,5 @@
 // Abstract representation of an entire The Escapists save directory.
-const fss = require('./lib/fss'),
+const fss = require('../lib/fss'),
 	SaveData = require('./SaveData'),
 	Save = class Save {
 		constructor(path) {

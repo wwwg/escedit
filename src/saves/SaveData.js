@@ -1,6 +1,6 @@
 const MCrypt = require('mcrypt').MCrypt,
-	key = require('./lib/Key'),
-	fss = require('./lib/fss'),
+	key = require('../lib/Key'),
+	fss = require('../lib/fss'),
 	SaveContent = require('./SaveContent'),
 	SaveData = class SaveData {
 		constructor(rawSave, saveNum) {
