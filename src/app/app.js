@@ -1,5 +1,5 @@
 const Session = require('../Session');
 let s = new Session;
-s.load().then(() => {
+s.load(s).then(() => {
 	console.log('Session loaded.');
 });
