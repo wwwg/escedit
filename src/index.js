@@ -29,6 +29,9 @@ app.on('ready', () => {
 	w.on('closed', () => {
 		w = null;
 	});
+	// Load session; this is NOT done on the electron renderer thread due to a double-free bug
+	session = new Session();
+	session.load(session);
 });
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
