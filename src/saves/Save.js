@@ -1,6 +1,7 @@
 // Abstract representation of an entire The Escapists save directory.
 const fss = require('../lib/fss'),
 	SaveData = require('./SaveData'),
+	SaveContent = require('./SaveContent'),
 	Save = class Save {
 		constructor(path) {
 			if (!path) {
@@ -8,14 +9,15 @@ const fss = require('../lib/fss'),
 				return;
 			}
 			this.path = path;
-			this.content = null;
+			this.dir = null;
 			this.loaded = false;
+			this.content = null;
 		}
 	}
 Save.prototype.load = async s => {
-	s.content = await fss.readDir(s.path);
-	if (!s.content.includes(Save.NAME_FILE) ||
-		!s.content.includes(Save.SAVE_FILE)) {
+	s.dir = await fss.readDir(s.path);
+	if (!s.dir.includes(Save.NAME_FILE) ||
+		!s.dir.includes(Save.SAVE_FILE)) {
 		// throw new Error("Corrupt save file");
 		console.log("WARN: Not loading invalid save file with path '" + s.path + "'.");
 		s.loaded = false;
@@ -26,7 +28,8 @@ Save.prototype.load = async s => {
 	s.loaded = true;
 	s.num = s.path.charAt(s.path.length - 1);
 	s.data = new SaveData(s.rawSave, s.num);
-	s.data.decrypt();
+	const decrypted = s.data.decrypt();
+	s.content = new SaveContent(decrypted);
 }
 // Constants
 Save.NAME_FILE = 'mname.dat';

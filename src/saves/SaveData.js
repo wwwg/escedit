@@ -29,7 +29,7 @@ const crypto = require('crypto'),
 			let dec = decipher.decrypt(data); // Double-free is caused here on the electron renderer process
 			dec = new Buffer(dec).toString('utf8');
 			decipher = null;
-			this.decrpted = dec;
+			this.decrypted = dec;
 			return dec;
 		}
 		export() {
