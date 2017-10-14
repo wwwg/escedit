@@ -19,7 +19,7 @@ const SaveContent = class SaveContent {
 				// Category
 				const cname = ln.substr(1, ln.length - 2); // Extract category name
 				this.tree[cname] = {}; // Create new object in the tree
-				console.log("Category '" + cname + "':");
+				lastc = cname;
 			} else if (ln.includes('=')) {
 				// Variable assignment within category
 				let parts = ln.split('='),
@@ -32,7 +32,7 @@ const SaveContent = class SaveContent {
 					// Assignment with multiple = chars, join the rest back together
 					vvalue = parts.slice(1).join('=');
 				}
-				console.log('-	Assignment: "' + vname + '" == "' + vvalue + '"');
+				this.tree[lastc][vname] = vvalue; // Assign the value on the AST
 			}
 		}
 	}
