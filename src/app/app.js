@@ -55,6 +55,9 @@ s.on('load', () => {
 			selectedTab.fadeIn(200);
 		}, 210);
 	});
+	$("#exit").click(e => {
+		alert("this button does absolutely nothing right now");
+	});
 });
 let launchEditor = () => {
 	if (!currsav) {
