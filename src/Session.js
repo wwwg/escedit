@@ -14,7 +14,7 @@ class Session extends EventEmitter {
 		await save.load(save);
 		if (save.loaded) {
 			// Successfully loaded, add to array
-			console.log("Successfully loaded save " + num + ".");
+			console.log("Successfully loaded and parsed save " + num + ".");
 			s.saves.push(save);
 		} else {
 			console.log("Failed to load save " + num + ". Moving on.");
