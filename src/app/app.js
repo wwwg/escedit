@@ -3,7 +3,7 @@ const {
 	dialog
 } = require('electron');
 window.currsav = null; // Current active save
-window.selectedTab = 'select-player'; // Id of current tab selected
+window.selectedTab = null; // Current tab selected
 console.log('escedit v0.0.1');
 // Get the session object from main process
 let s = remote.getGlobal("session");
@@ -51,4 +51,5 @@ let launchEditor = () => {
 		$("#sec-edit").fadeIn(400);
 	}, 310);
 	$("#title").text("Save #" + currsav.num);
+	selectedTab = $("#select-player")[0];
 }
