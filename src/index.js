@@ -3,8 +3,8 @@ const ENABLE_DEV_TOOLS = true,
 	url = require('url'),
 	path = require('path'),
 	{ app, BrowserWindow } = require('electron');
-let w, // Browser window
-	session; // escedit session in which saves are loaded
+let w = null; // Browser window
+global.session = null; // escedit session in which saves are loaded
 
 app.on('ready', () => {
 	// Set up Electron window
@@ -30,8 +30,8 @@ app.on('ready', () => {
 		w = null;
 	});
 	// Load session; this is NOT done on the electron renderer thread due to a double-free bug
-	session = new Session();
-	session.load(session);
+	global.session = new Session();
+	global.session.load(global.session);
 });
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
