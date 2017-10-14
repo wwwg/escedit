@@ -21,7 +21,7 @@ const Save = require('./Save'),
 	Session.prototype.load = async s => {
 		s.dirs = await fss.readDir(s.saveDir);
 		for (var i = 1; i < 4; ++i) {
-			if (s.dirs.includes('save' + 1)) {
+			if (s.dirs.includes('save' + i)) {
 				console.log("Loading save " + i);
 				s.loadSave(s, i);
 			}
