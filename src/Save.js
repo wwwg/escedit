@@ -12,6 +12,10 @@ const fss = require('./lib/fss'),
 	}
 Save.prototype.load = async s => {
 	s.content = await fss.readDir(s.path);
+	if (!s.content.includes(Save.NAME_FILE) ||
+		!s.content.includes(Save.SAVE_FILE)) {
+		throw new Error("Corrupt save file");
+	}
 }
 // Constants
 Save.NAME_FILE = 'mname.dat';
