@@ -3,8 +3,19 @@
 <head>
 	<title>escedit</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<script>
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
+	<!-- Script imports -->
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+	<!-- /Script imports -->
+	<script>
+		if (window.module) module = window.module;
+	</script>
 </head>
 <body>
 	<h2>There is absolutely nothing useful here.</h2>
