@@ -2,6 +2,7 @@ const {
 	remote,
 	dialog
 } = require('electron');
+window.currsav = null; // Current active save
 console.log('escedit v0.0.1');
 // Get the session object from main process
 let s = remote.getGlobal("session");
@@ -27,6 +28,7 @@ s.on('load', () => {
 			const savNum = parseInt(e.target.id.charAt(e.target.id.length - 1));
 			console.log(`Save number ${savNum} was selected.`);
 			const save = s.saves[savNum - 1];
+			currsav = save;
 		});
 	}
 });
