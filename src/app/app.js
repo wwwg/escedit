@@ -63,9 +63,9 @@ s.on('load', () => {
 		const exp = new Export(currsav.nameContent, newSav, currsav.num, s);
 		ipcRenderer.send('export', exp);
 	});
-	$("#name-box").on("input", () => { currsav.nameContent.tree["Data"]["Name"] = $("#name-box").val(); });
-	$("#day-box").on("input", () => { currsav.nameContent.tree["Data"]["Day"] = $("#day-box").val(); });
-	$("#map-box").on("input", () => { currsav.nameContent.tree["Data"]["Map"] = $("#map-box").val(); });
+	$("#name-box").on("input", () => { newSav["Player"]["Name"] = $("#name-box").val(); });
+	$("#day-box").on("input", () => { newSav["Player"]["Day"] = $("#day-box").val(); });
+	$("#map-box").on("input", () => { newSav["Player"]["Map"] = $("#map-box").val(); });
 
 	$("#cash-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][0] = $("#cash-box").val(); });
 	$("#hp-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][1] = $("#hp-box").val(); });

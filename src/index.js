@@ -44,6 +44,7 @@ app.on('window-all-closed', () => {
 ipcMain.on('export', async (evt, exp) => {
 	console.log(`Recieved export #${exp.num} via IPC. Encrypting...`);
 	Export.encrypt(exp);
+	console.log(exp.name);
 	/*
 	console.log(`Encryption finished. Writing to '${exp.outDir}'`);
 	await fss.write(exp.outSaveFile, exp.encryptedSave);
