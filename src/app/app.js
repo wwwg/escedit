@@ -84,4 +84,9 @@ let launchEditor = () => {
 	$("#name-box")[0].value = currsav.nameContent.tree["Data"]["Name"];
 	$("#day-box")[0].value = currsav.nameContent.tree["Data"]["Day"];
 	$("#map-box")[0].value = currsav.nameContent.tree["Data"]["Map"];
+	// Fill values in the stats panel
+	$("#cash-box")[0].value = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][0];
+	$("#hp-box")[0].value   = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][1];
+	$("#heat-box")[0].value = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][2];
+	$("#fat-box")[0].value  = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][3];
 }
