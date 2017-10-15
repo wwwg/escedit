@@ -4,7 +4,7 @@ const {
 } = require('electron');
 window.currsav = null; // Current active save
 window.selectedTab = null; // Current tab selected
-window.newSave = null; // New save tree
+window.newSav = null; // New save tree
 console.log('escedit v0.0.1');
 // Get the session object from main process
 let s = remote.getGlobal("session");
@@ -63,10 +63,10 @@ s.on('load', () => {
 	$("#day-box").on("input", () => { currsav.nameContent.tree["Data"]["Day"] = $("#day-box").val(); });
 	$("#map-box").on("input", () => { currsav.nameContent.tree["Data"]["Map"] = $("#map-box").val(); });
 
-	$("#cash-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][0] = $("#cash-box").val(); });
-	$("#hp-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][1] = $("#hp-box").val(); });
-	$("#heat-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][2] = $("#heat-box").val(); });
-	$("#fat-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][3] = $("#fat-box").val(); });
+	$("#cash-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][0] = $("#cash-box").val(); });
+	$("#hp-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][1] = $("#hp-box").val(); });
+	$("#heat-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][2] = $("#heat-box").val(); });
+	$("#fat-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][3] = $("#fat-box").val(); });
 });
 let launchEditor = () => {
 	if (!currsav) {
@@ -82,6 +82,27 @@ let launchEditor = () => {
 	// The player tab is the default tab
 	selectedTab = $("#player");
 	selectedTab.fadeIn(200);
+	// Create newSav
+	//currsav.content.tree
+	newSav = {};
+	for (const c in currsav.content.tree) {
+		const obj = currsav.content.tree[c];
+		newSav[c] = {};
+		for (const k in obj) {
+			newSav[c][k] = null;
+			const val = obj[k];
+			if (val instanceof Array) {
+				// Clone array
+				newSav[c][k] = [];
+				for (var i = 0; i < val.length; ++i) {
+					newSav[c][k].push(val[i]);
+				}
+			} else {
+				// Clone value
+				newSav[c][k] = obj[k];
+			}
+		}
+	}
 	// Underline and highlight player tab
 	$("#select-player").css("border-bottom", "2px solid #FFF");
 	$("#select-player").css("color", "#FFF");
@@ -91,8 +112,8 @@ let launchEditor = () => {
 	$("#day-box")[0].value = currsav.nameContent.tree["Data"]["Day"];
 	$("#map-box")[0].value = currsav.nameContent.tree["Data"]["Map"];
 	// Fill values in the stats panel
-	$("#cash-box")[0].value = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][0];
-	$("#hp-box")[0].value   = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][1];
-	$("#heat-box")[0].value = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][2];
-	$("#fat-box")[0].value  = currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][3];
+	$("#cash-box")[0].value = newSav["Player"]["Cash_HP_Heat_Fat"][0];
+	$("#hp-box")[0].value   = newSav["Player"]["Cash_HP_Heat_Fat"][1];
+	$("#heat-box")[0].value = newSav["Player"]["Cash_HP_Heat_Fat"][2];
+	$("#fat-box")[0].value  = newSav["Player"]["Cash_HP_Heat_Fat"][3];
 }
