@@ -1,9 +1,14 @@
 // Parses raw save strings into an abstract syntax tree
 const SaveContent = class SaveContent {
-	constructor(str) {
-		this.str = str;
-		this.tree = {};
-		this.parse();
+	constructor(data) {
+		if (typeof data == "string") {
+			this.str = str;
+			this.tree = {};
+			this.parse();
+		} else if (typeof data === "object") {
+			this.tree = data;
+			this.str = this.serialize();
+		} else throw new Error('SaveContent constructed with invalid data');
 	}
 	parse(str) {
 		if (!str) {
