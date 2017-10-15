@@ -84,6 +84,6 @@ p {
 .panel:hover {
 	border: 1px solid #fff;
 }
-#map-box, #day-box, #name-box {
+.box {
 	float: right;
 }
