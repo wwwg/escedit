@@ -8,6 +8,10 @@ class Session extends EventEmitter {
 			this.saveDir = os.homedir() + "/The Escapists";
 			this.saves = [];
 		}
+		sendExport(export) {
+			// Alert the main process of an export
+			this.emit('export', export);
+		}
 	}
 	Session.prototype.loadSave = async (s, num) => {
 		const save = new Save(s.saveDir + ("/save" + num));
