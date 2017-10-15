@@ -2,6 +2,7 @@ const {
 	remote,
 	dialog
 } = require('electron');
+const Export = require('../Export');
 window.currsav = null; // Current active save
 window.selectedTab = null; // Current tab selected
 window.newSav = null; // New save tree
