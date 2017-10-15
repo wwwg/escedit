@@ -79,7 +79,7 @@ const SaveContent = class SaveContent {
 				}
 				if (vval instanceof Array) {
 					// Convert array back into "@" deliminated string
-					out += `${vval.reverse().join('@')}\n`;
+					out += `${vval.join('@')}\n`;
 				} else {
 					// Append the raw value to the line
 					out += `${vval.toString()}\n`;
