@@ -111,9 +111,9 @@ let launchEditor = () => {
 	$("#select-player").css("color", "#FFF");
 	$("#select-player").css("font-weight", "bold");
 	// Fill values in the world panel
-	$("#name-box")[0].value = currsav.nameContent.tree["Data"]["Name"];
+	$("#name-box")[0].value = newSav["Player"]["Name"];
 	$("#day-box")[0].value = currsav.nameContent.tree["Data"]["Day"];
-	$("#map-box")[0].value = currsav.nameContent.tree["Data"]["Map"];
+	$("#map-box")[0].value = newSav["Player"]["Map"];
 	// Fill values in the stats panel
 	$("#cash-box")[0].value = newSav["Player"]["Cash_HP_Heat_Fat"][0];
 	$("#hp-box")[0].value   = newSav["Player"]["Cash_HP_Heat_Fat"][1];
