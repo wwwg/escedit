@@ -6,7 +6,7 @@ const ENABLE_DEV_TOOLS = true,
 		BrowserWindow,
 		ipcMain
 	} = require('electron'),
-	fss = require('./lib/fss').
+	fss = require('./lib/fss'),
 	Export = require('./Export');
 let w = null; // Browser window
 global.session = null; // escedit session in which saves are loaded
