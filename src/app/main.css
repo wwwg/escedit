@@ -79,7 +79,9 @@ p {
 	border-radius: 4px;
 	font-size: 110%;
 	padding: 5px;
-	transition: border 250ms
+	transition: border 250ms;
+	margin-left: 3%;
+	float: left;
 }
 .panel:hover {
 	border: 1px solid #fff;
