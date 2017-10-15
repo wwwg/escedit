@@ -4,6 +4,7 @@ const {
 } = require('electron');
 window.currsav = null; // Current active save
 window.selectedTab = null; // Current tab selected
+window.newSave = null; // New save tree
 console.log('escedit v0.0.1');
 // Get the session object from main process
 let s = remote.getGlobal("session");
@@ -61,6 +62,11 @@ s.on('load', () => {
 	$("#name-box").on("input", () => { currsav.nameContent.tree["Data"]["Name"] = $("#name-box").val(); });
 	$("#day-box").on("input", () => { currsav.nameContent.tree["Data"]["Day"] = $("#day-box").val(); });
 	$("#map-box").on("input", () => { currsav.nameContent.tree["Data"]["Map"] = $("#map-box").val(); });
+
+	$("#cash-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][0] = $("#cash-box").val(); });
+	$("#hp-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][1] = $("#hp-box").val(); });
+	$("#heat-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][2] = $("#heat-box").val(); });
+	$("#fat-box").on("input", () => { currsav.content.tree["Player"]["Cash_HP_Heat_Fat"][3] = $("#fat-box").val(); });
 });
 let launchEditor = () => {
 	if (!currsav) {
