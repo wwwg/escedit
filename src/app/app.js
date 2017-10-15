@@ -128,3 +128,7 @@ let launchEditor = () => {
 	$("#speed-box")[0].value = newSav["Player"]["Stats"][1];
 	$("#int-box")[0].value = newSav["Player"]["Stats"][2];
 }
+ipcRenderer.on('writeFinish', () => {
+	// Ready to exit
+	alert("Successfully modified save file.");
+});
