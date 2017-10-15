@@ -83,7 +83,6 @@ let launchEditor = () => {
 	selectedTab = $("#player");
 	selectedTab.fadeIn(200);
 	// Create newSav
-	//currsav.content.tree
 	newSav = {};
 	for (const c in currsav.content.tree) {
 		const obj = currsav.content.tree[c];
