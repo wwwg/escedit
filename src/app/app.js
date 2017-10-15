@@ -16,9 +16,9 @@ s.on('load', () => {
 	for (var i = 0; i < s.saves.length; ++i) {
 		const saveNumber = (i + 1).toString(),
 			nameData = s.saves[i].nameContent.tree["Data"],
-			pname = s.saves[0].content.tree['Player']["Name"],
-			day = s.saves[0].content.tree['Prison']["Day"],
-			map = s.saves[0].content.tree['Player']["Map"],
+			pname = s.saves[i].content.tree['Player']["Name"],
+			day = s.saves[i].content.tree['Prison']["Day"],
+			map = s.saves[i].content.tree['Player']["Map"],
 			saveElem = $(`
 				<div id="save${saveNumber}" class="save">
 					Name: <b id="save${saveNumber}-name"></b><br>
