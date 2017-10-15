@@ -6,6 +6,7 @@ const ENABLE_DEV_TOOLS = true,
 		BrowserWindow,
 		ipcMain
 	} = require('electron'),
+	fss = require('./lib/fss').
 	Export = require('./Export');
 let w = null; // Browser window
 global.session = null; // escedit session in which saves are loaded
@@ -40,9 +41,12 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
 });
-ipcMain.on('export', (evt, exp) => {
+ipcMain.on('export', async (evt, exp) => {
 	console.log(`Recieved export #${exp.num} via IPC. Encrypting...`);
 	Export.encrypt(exp);
-	console.log('Encryption finished.');
-	console.log(exp.decryptedSave);
+	console.log(`Encryption finished. Writing to '${exp.outDir}'`);
+	await fss.write(exp.outSaveFile, exp.encryptedSave);
+	await fss.write(exp.outNameFile, exp.name);
+	console.log('Write finished.');
+	ipcMain.send('writeFinish');
 });
