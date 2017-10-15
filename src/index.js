@@ -48,5 +48,8 @@ ipcMain.on('export', async (evt, exp) => {
 	await fss.write(exp.outSaveFile, exp.encryptedSave);
 	await fss.write(exp.outNameFile, exp.name);
 	console.log('Write finished.');
-	w.webContents.send('writeFinish');
+	setTimeout(() => {
+		// Delay a little just in case
+		w.webContents.send('writeFinish');
+	}, 750);
 });
