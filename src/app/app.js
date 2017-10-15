@@ -71,6 +71,10 @@ s.on('load', () => {
 	$("#hp-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][1] = $("#hp-box").val(); });
 	$("#heat-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][2] = $("#heat-box").val(); });
 	$("#fat-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][3] = $("#fat-box").val(); });
+
+	$("#str-box").on("input", () => { newSav["Player"]["Stats"][0] = $("#str-box").val(); });
+	$("#speed-box").on("input", () => { newSav["Player"]["Stats"][1] = $("#speed-box").val(); });
+	$("#int-box").on("input", () => { newSav["Player"]["Stats"][2] = $("#int-box").val(); });
 });
 let launchEditor = () => {
 	if (!currsav) {
@@ -119,4 +123,8 @@ let launchEditor = () => {
 	$("#hp-box")[0].value   = newSav["Player"]["Cash_HP_Heat_Fat"][1];
 	$("#heat-box")[0].value = newSav["Player"]["Cash_HP_Heat_Fat"][2];
 	$("#fat-box")[0].value  = newSav["Player"]["Cash_HP_Heat_Fat"][3];
+	// Fill values in the base stats panel
+	$("#str-box")[0].value = newSav["Player"]["Stats"][0];
+	$("#speed-box")[0].value = newSav["Player"]["Stats"][1];
+	$("#int-box")[0].value = newSav["Player"]["Stats"][2];
 }
