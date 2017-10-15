@@ -19,15 +19,15 @@ class Export {
 		// Encrypted save buffer
 		this.encryptedSave = null;
 	}
-	encrypt() {
+	static encrypt(exp) {
 		// Encrypts the save file into a buffer.
 		// NOTE : This MUST be done on the main process due to a bug in electron.
-		const saveBuf = new Buffer(this.decryptedSave, 'utf8'),
+		const saveBuf = new Buffer(exp.decryptedSave, 'utf8'),
 			keyBuf = new Buffer(key, 'utf8'),
 			cipher = new MCrypt('blowfish-compat', 'ecb');
 		cipher.validateKeySize(false);
 		cipher.open(keyBuf);
-		this.encryptedSave = cipher.encrypt(saveBuf);
+		exp.encryptedSave = cipher.encrypt(saveBuf);
 	}
 }
 

@@ -1,12 +1,12 @@
 const ENABLE_DEV_TOOLS = true,
 	Session = require('./Session'),
 	url = require('url'),
-	path = require('path'),
-	{
+	path = require('path'), {
 		app,
 		BrowserWindow,
 		ipcMain
-	} = require('electron');
+	} = require('electron'),
+	Export = require('./Export');
 let w = null; // Browser window
 global.session = null; // escedit session in which saves are loaded
 
@@ -40,6 +40,8 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
 });
-ipcMain.on('export', (evt, arg) => {
-	console.log(arg);
+ipcMain.on('export', (evt, exp) => {
+	console.log(`Recieved export #${exp.num} via IPC. Encrypting...`);
+	Export.encrypt(exp);
+	console.log('Encryption finished.');
 });
