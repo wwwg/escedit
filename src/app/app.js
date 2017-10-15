@@ -57,7 +57,7 @@ s.on('load', () => {
 		}, 210);
 	});
 	$("#exit").click(e => {
-		alert("this button does absolutely nothing right now");
+		// Export save
 	});
 	$("#name-box").on("input", () => { currsav.nameContent.tree["Data"]["Name"] = $("#name-box").val(); });
 	$("#day-box").on("input", () => { currsav.nameContent.tree["Data"]["Day"] = $("#day-box").val(); });
