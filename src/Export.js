@@ -5,3 +5,5 @@ class Export {
 		this.saveAST = saveContent;
 	}
 }
+
+module.exports = Export;
