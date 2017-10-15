@@ -1,6 +1,7 @@
 const {
 	remote,
-	dialog
+	dialog,
+	ipcRenderer
 } = require('electron');
 const Export = require('../Export');
 window.currsav = null; // Current active save
@@ -60,7 +61,7 @@ s.on('load', () => {
 	$("#exit").click(e => {
 		// Export save
 		const exp = new Export(currsav.nameContent, newSav, currsav.num, s);
-		s.emit('export', exp);
+		ipcRenderer.send('export', exp);
 	});
 	$("#name-box").on("input", () => { currsav.nameContent.tree["Data"]["Name"] = $("#name-box").val(); });
 	$("#day-box").on("input", () => { currsav.nameContent.tree["Data"]["Day"] = $("#day-box").val(); });
