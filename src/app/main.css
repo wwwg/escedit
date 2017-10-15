@@ -75,10 +75,14 @@ p {
 }
 .panel {
 	display: inline-block;
-	border: 2px solid white;
+	border: 1px solid #afafaf;
 	border-radius: 4px;
 	font-size: 110%;
 	padding: 5px;
+	transition: border 250ms
+}
+.panel:hover {
+	border: 1px solid #fff;
 }
 #map-box, #day-box, #name-box {
 	float: right;
