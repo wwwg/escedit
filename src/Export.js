@@ -7,6 +7,8 @@ class Export {
 		this.saveCont = new SaveContent(this.saveAST);
 		this.nameCont = new SaveContent(this.nameAST);
 		this.session = session;
+		this.outDir = session.saveDir + "/save" + this.num + "/";
+		console.log("Export created to write to directory '" + this.outDir + "'");
 	}
 }
 
