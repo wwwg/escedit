@@ -2,7 +2,7 @@
 const SaveContent = class SaveContent {
 	constructor(data) {
 		if (typeof data == "string") {
-			this.str = str;
+			this.str = data;
 			this.tree = {};
 			this.parse();
 		} else if (typeof data === "object") {
