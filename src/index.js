@@ -32,6 +32,9 @@ app.on('ready', () => {
 	// Load session; this is NOT done on the electron renderer thread due to a double-free bug
 	global.session = new Session();
 	global.session.load(global.session);
+	global.session.on('export', exp => {
+		console.log('Recieved export:', exp);
+	})
 });
 app.on('window-all-closed', () => {
 	if (process.platform != 'darwin') app.quit();
