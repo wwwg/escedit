@@ -89,3 +89,7 @@ p {
 .box {
 	float: right;
 }
+.stats-box {
+	float: right;
+	width: 50px !important;
+}
