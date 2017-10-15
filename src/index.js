@@ -44,4 +44,5 @@ ipcMain.on('export', (evt, exp) => {
 	console.log(`Recieved export #${exp.num} via IPC. Encrypting...`);
 	Export.encrypt(exp);
 	console.log('Encryption finished.');
+	console.log(exp.decryptedSave);
 });
