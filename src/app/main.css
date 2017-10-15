@@ -19,6 +19,15 @@ button {
 	color: white;
 	font-size: 150%;
 	cursor: pointer;
+	text-align: center;
+}
+input {
+	background: none;
+	font-size: 110%;
+	border: 1px solid white;
+	border-radius: 3px;
+	color: white;
+	text-align: center;
 }
 p {
 	font-size: 125%;
