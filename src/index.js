@@ -34,6 +34,7 @@ app.on('ready', () => {
 	global.session.load(global.session);
 	global.session.on('export', exp => {
 		console.log('Recieved export:', exp);
+		exp.encrypt();
 	})
 });
 app.on('window-all-closed', () => {
