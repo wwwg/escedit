@@ -64,7 +64,7 @@ s.on('load', () => {
 		ipcRenderer.send('export', exp);
 	});
 	$("#name-box").on("input", () => { newSav["Player"]["Name"] = $("#name-box").val(); });
-	$("#day-box").on("input", () => { newSav["Player"]["Day"] = $("#day-box").val(); });
+	$("#day-box").on("input", () => { newSav["Prison"]["Day"] = $("#day-box").val(); });
 	$("#map-box").on("input", () => { newSav["Player"]["Map"] = $("#map-box").val(); });
 
 	$("#cash-box").on("input", () => { newSav["Player"]["Cash_HP_Heat_Fat"][0] = $("#cash-box").val(); });
@@ -112,7 +112,7 @@ let launchEditor = () => {
 	$("#select-player").css("font-weight", "bold");
 	// Fill values in the world panel
 	$("#name-box")[0].value = newSav["Player"]["Name"];
-	$("#day-box")[0].value = currsav.nameContent.tree["Data"]["Day"];
+	$("#day-box")[0].value = newSav["Prison"]["Day"];
 	$("#map-box")[0].value = newSav["Player"]["Map"];
 	// Fill values in the stats panel
 	$("#cash-box")[0].value = newSav["Player"]["Cash_HP_Heat_Fat"][0];
