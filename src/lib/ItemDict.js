@@ -16,7 +16,7 @@ let ItemDict = [
 	new Item(181, "Multitool"),
 	new Item(111, "Knuckle Duster"),
 	new Item(19, "Glass Shank"),
-	new Item(192, "Wooden Bat"),
+	// new Item(192, "Wooden Bat"),
 	new Item(183, "Spiked Bat"),
 	new Item(184, "Durable Contraband Pouch"),
 	new Item(99, "Poster"),
