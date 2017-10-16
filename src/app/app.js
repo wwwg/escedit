@@ -162,6 +162,14 @@ let launchEditor = () => {
 			newSav["Player"]["Weapon"] = newVal;
 		}
 	});
+	outfitDropdown.elm.change(e => {
+		const id = parseInt($(e.target).val());
+		if (id == -1) newSav["Player"]["Outfit"] = "";
+		else {
+			const newVal = id + "_100"; // Assign outfit to 100% durability
+			newSav["Player"]["Outfit"] = newVal;
+		}
+	});
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit
