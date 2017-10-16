@@ -12,3 +12,5 @@ class InmateCard {
 		$(parent).append(this.elm);
 	}
 }
+
+window.InmateCard = InmateCard;
