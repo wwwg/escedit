@@ -129,7 +129,7 @@ let launchEditor = () => {
 	$("#speed-box")[0].value = newSav["Player"]["Stats"][1];
 	$("#int-box")[0].value = newSav["Player"]["Stats"][2];
 	for (var i = 1; i < 8; ++i) {
-		var currItem = currsav.content.tree["Player"]["Inv"][i - 1];
+		var currItem = newSav["Player"]["Inv"][i - 1];
 		var dropdown = new ItemDropdown(currItem);
 		dropdown.addTo(`#inven-dropdown-${i}`);
 		dropdown.elm.change(e => {
@@ -137,9 +137,9 @@ let launchEditor = () => {
 			const id = parseInt($(e.target).val());
 			if (id == -1) {
 				// Empty slot, change to none
-				currsav.content.tree["Player"]["Inv"][slotNumber - 1] = "";
+				newSav["Player"]["Inv"][slotNumber - 1] = "";
 			} else {
-				currsav.content.tree["Player"]["Inv"][slotNumber - 1] = id;
+				newSav["Player"]["Inv"][slotNumber - 1] = id.toString();
 				// console.log("Changing inventory item " + slotNumber + " to id " + id);
 			}
 		});
