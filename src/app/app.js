@@ -7,6 +7,7 @@ const Export = require('../Export');
 window.currsav = null; // Current active save
 window.selectedTab = null; // Current tab selected
 window.newSav = null; // New save tree
+window.invSlots = []; // Array of ItemDropdowns
 console.log('escedit v0.0.1');
 // Get the session object from main process
 let s = remote.getGlobal("session");
@@ -127,6 +128,10 @@ let launchEditor = () => {
 	$("#str-box")[0].value = newSav["Player"]["Stats"][0];
 	$("#speed-box")[0].value = newSav["Player"]["Stats"][1];
 	$("#int-box")[0].value = newSav["Player"]["Stats"][2];
+	for (var i = 1; i < 8; ++i) {
+		var currItem = currsav.content.tree["Player"]["Inv"][i - 1];
+		var dropdown = new ItemDropdown(currItem);
+	}
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit

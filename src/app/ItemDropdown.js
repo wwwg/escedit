@@ -10,7 +10,8 @@ class ItemDropdown {
 					${i.name}
 				</option>
 			`));
-		})
+		});
+		this.elm.val(initItem.toString());
 	}
 	addTo(parentElem) {
 		$(parentElem).append(this.elm);
