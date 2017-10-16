@@ -132,6 +132,11 @@ let launchEditor = () => {
 		var currItem = currsav.content.tree["Player"]["Inv"][i - 1];
 		var dropdown = new ItemDropdown(currItem);
 		dropdown.addTo(`#inven-dropdown-${i}`);
+		dropdown.elm.change(e => {
+			const id = parseInt(dropdown.elm.val());
+			currsav.content.tree["Player"]["Inv"][i - 1] = id;
+			console.log("Changing inventory item " + i + " to id " + id);
+		});
 	}
 }
 ipcRenderer.on('writeFinish', () => {
