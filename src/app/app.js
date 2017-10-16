@@ -131,6 +131,7 @@ let launchEditor = () => {
 	for (var i = 1; i < 8; ++i) {
 		var currItem = currsav.content.tree["Player"]["Inv"][i - 1];
 		var dropdown = new ItemDropdown(currItem);
+		dropdown.addTo(`#inven-dropdown-${i}`);
 	}
 }
 ipcRenderer.on('writeFinish', () => {
