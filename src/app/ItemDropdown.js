@@ -6,7 +6,7 @@ class ItemDropdown {
 		const me = this;
 		ItemDict.forEach(i => {
 			me.elm.append($(`
-				<option name="${i.id}">
+				<option value="${i.id}">
 					${i.name}
 				</option>
 			`));
