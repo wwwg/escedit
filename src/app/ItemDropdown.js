@@ -8,3 +8,4 @@ class ItemDropdown {
 }
 
 module.exports = ItemDropdown;
+window.ItemDropdown = ItemDropdown; // Verify the class is global
