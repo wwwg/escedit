@@ -76,6 +76,9 @@ s.on('load', () => {
 	$("#str-box").on("input", () => { newSav["Player"]["Stats"][0] = $("#str-box").val(); });
 	$("#speed-box").on("input", () => { newSav["Player"]["Stats"][1] = $("#speed-box").val(); });
 	$("#int-box").on("input", () => { newSav["Player"]["Stats"][2] = $("#int-box").val(); });
+	$("#xcoord").on("input", () => newSav["Player"]['Location'][0] = $("#xcoord").val());
+	$("#ycoord").on("input", () => newSav["Player"]['Location'][1] = $("#ycoord").val());
+	$("#zcoord").on("input", () => newSav["Player"]['Location'][2] = $("#zcoord").val());
 });
 let launchEditor = () => {
 	if (!currsav) {
@@ -170,6 +173,10 @@ let launchEditor = () => {
 			newSav["Player"]["Outfit"] = newVal;
 		}
 	});
+	// Coordinate boxes
+	$("#xcoord").val(newSav["Player"]['Location'][0]);
+	$("#ycoord").val(newSav["Player"]['Location'][1]);
+	$("#zcoord").val(newSav["Player"]['Location'][2]);
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit

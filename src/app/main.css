@@ -105,3 +105,11 @@ option {
 	float: right;
 	width: 50px !important;
 }
+#xcoord, #ycoord {
+	width: 60px;
+	margin-left: 2px;
+}
+#zcoord {
+	float: right;
+	width: 25px;
+}
