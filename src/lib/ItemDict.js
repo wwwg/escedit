@@ -133,7 +133,6 @@ let ItemDict = [
 	new Item(54, "Candle"),
 	new Item(105, "Cup of Molten Chocolate"),
 	new Item(260, "Baseball Bat"),
-	new Item(0, "Cell Key"),
 	new Item(2, "Pack of Mints"),
 	new Item(11, "Stun Rod"),
 	new Item(20, "Dead Rat"), // Hidden item?
