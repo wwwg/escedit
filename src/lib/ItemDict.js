@@ -1,6 +1,6 @@
 // Dictionary of all items in The Escapists
 const Item = require('./Item');
-module.exports = [
+let ItemDict = [
 	new Item(13, "Roll of Duct Tape"),
 	new Item(25, "Crowbar"),
 	new Item(12, "Timber"),
@@ -133,3 +133,10 @@ module.exports = [
 	new Item(54, "Candle"),
 	new Item(105, "Cup of Molten Chocolate")
 ];
+// Sort according to name
+ItemDict.sort((a, b) => {
+	if (a.name < b.name) return -1;
+	if (a.name > b.name) return 1;
+	return 0;
+});
+module.exports = ItemDict;
