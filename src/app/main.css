@@ -33,6 +33,17 @@ p {
 	font-size: 125%;
 	margin: 1px;
 }
+select {
+	background: none;
+	border: 1px solid white;
+	border-radius: 3px;
+	text-align: center;
+	color: white;
+}
+option {
+	color: black;
+	background: none;
+}
 .sec-start {
 	display: inline-block;
 }
