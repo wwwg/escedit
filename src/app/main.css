@@ -92,7 +92,7 @@ option {
 	padding: 5px;
 	transition: border 250ms;
 	margin-left: 1%;
-	margin-bottom: 2%;
+	margin-bottom: 1%;
 	float: left;
 }
 .panel:hover {
