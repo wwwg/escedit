@@ -181,7 +181,7 @@ let ItemDict = [
 	new Item(142, "Cushioned POW Outfit"),
 	new Item(143, "Padded POW Outfit"),
 	new Item(145, "TV Remote"),
-	new item(147, "DVD"),
+	new Item(147, "DVD"),
 	new Item(154, "Green Herb"),
 	new Item(155, "Red Herb"),
 	new Item(156, "Silk Handkerchief"),
