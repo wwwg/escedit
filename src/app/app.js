@@ -128,6 +128,7 @@ let launchEditor = () => {
 	$("#str-box")[0].value = newSav["Player"]["Stats"][0];
 	$("#speed-box")[0].value = newSav["Player"]["Stats"][1];
 	$("#int-box")[0].value = newSav["Player"]["Stats"][2];
+	// Handle inventory dropdowns
 	for (var i = 1; i < 8; ++i) {
 		var currItem = newSav["Player"]["Inv"][i - 1];
 		var dropdown = new ItemDropdown(currItem);
@@ -144,6 +145,15 @@ let launchEditor = () => {
 			}
 		});
 	}
+	// Handle equiptment dropdowns
+	let currWeapon = newSav["Player"]["Weapon"],
+		currOutfit = newSav["Player"]["Outfit"];
+	if (currWeapon !== "") currWeapon = currWeapon.split("_")[0];
+	if (currOutfit !== "") currOutfit = currOutfit.split("_")[0];
+	let weaponDropdown = new ItemDropdown(currWeapon),
+		outfitDropdown = new ItemDropdown(currOutfit);
+	weaponDropdown.addTo($("#weapon-dropdown"));
+	outfitDropdown.addTo($("#outfit-dropdown"));
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit
