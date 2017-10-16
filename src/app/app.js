@@ -133,9 +133,15 @@ let launchEditor = () => {
 		var dropdown = new ItemDropdown(currItem);
 		dropdown.addTo(`#inven-dropdown-${i}`);
 		dropdown.elm.change(e => {
-			const id = parseInt(dropdown.elm.val());
-			currsav.content.tree["Player"]["Inv"][i - 1] = id;
-			console.log("Changing inventory item " + i + " to id " + id);
+			const slotNumber = parseInt(e.target.parentElement.id.split('-')[2]);
+			const id = parseInt($(e.target).val());
+			if (id == -1) {
+				// Empty slot, change to none
+				currsav.content.tree["Player"]["Inv"][slotNumber - 1] = "";
+			} else {
+				currsav.content.tree["Player"]["Inv"][slotNumber - 1] = id;
+				// console.log("Changing inventory item " + slotNumber + " to id " + id);
+			}
 		});
 	}
 }
