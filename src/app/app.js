@@ -154,6 +154,14 @@ let launchEditor = () => {
 		outfitDropdown = new ItemDropdown(currOutfit);
 	weaponDropdown.addTo($("#weapon-dropdown"));
 	outfitDropdown.addTo($("#outfit-dropdown"));
+	weaponDropdown.elm.change(e => {
+		const id = parseInt($(e.target).val());
+		if (id == -1) newSav["Player"]["Weapon"] = "";
+		else {
+			const newVal = id + "_-100"; // Assign weapon to 100% durability
+			newSav["Player"]["Weapon"] = newVal;
+		}
+	});
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit
