@@ -91,8 +91,8 @@ option {
 	font-size: 110%;
 	padding: 5px;
 	transition: border 250ms;
-	margin-left: 3%;
-	margin-bottom: 3%;
+	margin-left: 1%;
+	margin-bottom: 2%;
 	float: left;
 }
 .panel:hover {
