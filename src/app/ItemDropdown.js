@@ -6,6 +6,4 @@ class ItemDropdown {
 			</select>`);
 	}
 }
-
-module.exports = ItemDropdown;
 window.ItemDropdown = ItemDropdown; // Verify the class is global
