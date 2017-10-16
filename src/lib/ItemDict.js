@@ -131,7 +131,8 @@ let ItemDict = [
 	new Item(10, "Bottle of Medicine"),
 	new Item(177, "Burrito"),
 	new Item(54, "Candle"),
-	new Item(105, "Cup of Molten Chocolate")
+	new Item(105, "Cup of Molten Chocolate"),
+	new Item(260, "Baseball Bat")
 ];
 // Sort according to name
 ItemDict.sort((a, b) => {
