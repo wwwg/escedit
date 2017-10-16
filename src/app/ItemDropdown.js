@@ -1,8 +1,12 @@
 const ItemDict = require('../lib/ItemDict');
 class ItemDropdown {
-	constructor(initItem) {
+	constructor(initItem, id) {
 		this.initial = initItem;
-		this.elm = $(`<select class="item-dropdown>"</select>`);
+		if (!id) {
+			this.elm = $(`<select class="item-dropdown"></select>`);
+		} else {
+			this.elm = $(`<select class="item-dropdown" id="${id}"></select>`);
+		}
 		this.elm.append(`<option value="-1">None</option>`);
 		const me = this;
 		ItemDict.forEach(i => {
