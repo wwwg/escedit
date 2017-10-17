@@ -68,6 +68,11 @@ class GuardCard {
 		this.ibox.addTo(`#guard-key-${this.num}`);
 		this.ibox.elm.css("width", "120px");
 		this.ibox.elm.css("float", "right");
+		this.ibox.elm.change(e => {
+			const guardId = e.target.parentElement.id.split('-')[2],
+				newItem = $(e.target).val() + "_100";
+			newSav["Guard_Inven"][guardId][0] = newItem;
+		})
 	}
 }
 
