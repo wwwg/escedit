@@ -24,6 +24,10 @@ class GuardCard {
 					<span class="inmate-label">Opinion</span>
 					<input id="guard-opi-${this.num}" class="inmate-stats-box" type="number" value="${guard[4]}"></input>
 				</div>
+				<div class="inmate-card-row">
+					<span class="inmate-label">Key</span>
+					<span id="guard-key-${this.num}">
+				</div>
 			</div>
 		`);
 	}
@@ -55,6 +59,15 @@ class GuardCard {
 				opi = $(e.target).val();
 			newSav["Guards"][num][4] = opi; // Update opinion
 		});
+		// Add key
+		let key = newSav["Guard_Inven"][this.num][0];
+		if (key.includes('_')) {
+			key = key.split('_')[0];
+		}
+		this.ibox = new ItemDropdown(key);
+		this.ibox.addTo(`#guard-key-${this.num}`);
+		this.ibox.elm.css("width", "120px");
+		this.ibox.elm.css("float", "right");
 	}
 }
 
