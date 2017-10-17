@@ -113,3 +113,11 @@ option {
 	float: right;
 	width: 25px;
 }
+.inmate-card {
+	float: left;
+	border: 1px solid white;
+	border-radius: 3px;
+	padding: 3px;
+	margin-right: 1%;
+	margin-bottom: 1%;
+}

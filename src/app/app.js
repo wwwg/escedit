@@ -177,6 +177,11 @@ let launchEditor = () => {
 	$("#xcoord").val(newSav["Player"]['Location'][0]);
 	$("#ycoord").val(newSav["Player"]['Location'][1]);
 	$("#zcoord").val(newSav["Player"]['Location'][2]);
+	// Inmate panel
+	for (const inmateId in newSav['Inmates']) {
+		var card = new InmateCard(inmateId, newSav["Inmates"][inmateId]);
+		card.addTo("#inmate-panel");
+	}
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit

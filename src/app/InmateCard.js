@@ -4,7 +4,7 @@ class InmateCard {
 		this.i = inmate;
 		this.elm = $(`
 			<div id="inmate-card-${this.num}" class="inmate-card">
-				<span style="float:left;">Name</span> &nbsp; <input id="inmate-name-${this.num}" type="text">${inmate[0]}</span><br>
+				<span>Name</span> &nbsp; <input id="inmate-name-${this.num}" type="text" value="${inmate[0]}"></span><br>
 			</div>
 		`);
 	}
