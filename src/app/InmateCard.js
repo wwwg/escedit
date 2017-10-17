@@ -33,7 +33,12 @@ class InmateCard {
 		$(`#inmate-name-${me.num}`).change(e => {
 			const num = e.target.id.split('-')[2],
 				name = $(e.target).val();
-			newSav["Inmates"][num] = name; // Update name
+			newSav["Inmates"][num][0] = name; // Update name
+		});
+		$(`#inmate-str-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				str = $(e.target).val();
+			newSav["Inmates"][num][2] = str; // Update strength
 		});
 	}
 }
