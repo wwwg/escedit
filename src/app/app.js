@@ -182,6 +182,11 @@ let launchEditor = () => {
 		var card = new InmateCard(inmateId, newSav["Inmates"][inmateId]);
 		card.addTo("#inmate-panel");
 	}
+	// Guard panel
+	for (const guardId in newSav['Guards']) {
+		var card = new InmateCard(guardId, newSav["Guards"][guardId]);
+		card.addTo("#guard-panel");
+	}
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit
