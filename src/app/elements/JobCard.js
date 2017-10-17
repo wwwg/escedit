@@ -17,6 +17,15 @@ class JobCard {
 		}
 		sel.append($(`<option value="-1">${newSav['Player']['Name']} (You)</option>`));
 		sel.val(this.val);
+		sel.change(e => {
+			const jobName = e.target.id.split('-')[1],
+				newJobVal = $(e.target).val();
+			if (newJobVal == "-1") {
+				// Reassignment of the player's own job
+				newSav["Player"]["Job"] = jobName;
+			}
+			newSav["Jobs"][jobName] = newJobVal;
+		});
 	}
 }
 
