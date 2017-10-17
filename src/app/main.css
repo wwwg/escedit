@@ -114,7 +114,7 @@ option {
 	width: 25px;
 }
 .inmate-card {
-	float: left;
+	float: left !important;
 	border: 1px solid white;
 	border-radius: 3px;
 	padding: 3px;
@@ -127,4 +127,7 @@ option {
 	text-align: center;
 	float: right;
 	/* margin-bottom: 2%; */
+}
+.inmate-card-row {
+	float: left;
 }
