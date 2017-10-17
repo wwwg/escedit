@@ -29,6 +29,12 @@ class InmateCard {
 	}
 	addTo(parent) {
 		$(parent).append(this.elm);
+		const me = this;
+		$(`#inmate-name-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				name = $(e.target).val();
+			newSav["Inmates"][num] = name; // Update name
+		});
 	}
 }
 
