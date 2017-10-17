@@ -40,6 +40,21 @@ class InmateCard {
 				str = $(e.target).val();
 			newSav["Inmates"][num][1] = str; // Update strength
 		});
+		$(`#inmate-speed-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				spd = $(e.target).val();
+			newSav["Inmates"][num][2] = spd; // Update speed
+		});
+		$(`#inmate-int-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				int = $(e.target).val();
+			newSav["Inmates"][num][3] = int; // Update intellect
+		});
+		$(`#inmate-opi-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				opi = $(e.target).val();
+			newSav["Inmates"][num][4] = opi; // Update opinion
+		});
 	}
 }
 
