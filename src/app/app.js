@@ -187,6 +187,15 @@ let launchEditor = () => {
 		var card = new GuardCard(guardId, newSav["Guards"][guardId]);
 		card.addTo("#guard-panel");
 	}
+	// Job tab
+	for (const jobName in newSav['Jobs']) {
+		const jobValue = newSav['Jobs'][jobName];
+		if (jobValue != "0") {
+			// 0 means the job doesn't exist in the map
+			const jcard = new JobCard(jobName, jobValue);
+			jcard.addTo("#job-cards");
+		}
+	}
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit

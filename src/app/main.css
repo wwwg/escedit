@@ -134,3 +134,14 @@ option {
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
+.job-card {
+	display: inline-block;
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 3px;
+	padding: 4px;
+	margin-bottom: 2%;
+}
+.job-label {
+	font-size: 110%;
+}
