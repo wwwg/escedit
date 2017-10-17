@@ -126,6 +126,11 @@ option {
 	font-size: 80%;
 	float: right;
 }
+.inmate-name-box, .inmate-label {
+	font-size: 80%;
+}
 .inmate-card-row {
 	/* float: center; */
+	margin-top: 1%;
+	margin-bottom: 1%;
 }
