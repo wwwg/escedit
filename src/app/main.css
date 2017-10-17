@@ -121,3 +121,10 @@ option {
 	margin-right: 1%;
 	margin-bottom: 1%;
 }
+.inmate-stats-box {
+	width: 50px !important;
+	font-size: 90%;
+	text-align: center;
+	float: right;
+	/* margin-bottom: 2%; */
+}
