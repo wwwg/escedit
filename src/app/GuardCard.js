@@ -29,6 +29,32 @@ class GuardCard {
 	}
 	addTo(parent) {
 		$(parent).append(this.elm);
+		const me = this;
+		$(`#guard-name-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				name = $(e.target).val();
+			newSav["Guards"][num][0] = name; // Update name
+		});
+		$(`#guard-str-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				str = $(e.target).val();
+			newSav["Guards"][num][1] = str; // Update strength
+		});
+		$(`#guard-speed-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				spd = $(e.target).val();
+			newSav["Guards"][num][2] = spd; // Update speed
+		});
+		$(`#guard-int-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				int = $(e.target).val();
+			newSav["Guards"][num][3] = int; // Update intellect
+		});
+		$(`#guard-opi-${me.num}`).change(e => {
+			const num = e.target.id.split('-')[2],
+				opi = $(e.target).val();
+			newSav["Guards"][num][4] = opi; // Update opinion
+		});
 	}
 }
 

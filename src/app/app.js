@@ -184,7 +184,7 @@ let launchEditor = () => {
 	}
 	// Guard panel
 	for (const guardId in newSav['Guards']) {
-		var card = new InmateCard(guardId, newSav["Guards"][guardId]);
+		var card = new GuardCard(guardId, newSav["Guards"][guardId]);
 		card.addTo("#guard-panel");
 	}
 }
