@@ -60,6 +60,8 @@ s.on('load', () => {
 		}, 210);
 	});
 	$("#exit").click(e => {
+		// Alert user that we're working on saving
+		$("#exit").text("Saving...");
 		// Export save
 		const exp = new Export(currsav.nameContent, newSav, currsav.num, s);
 		ipcRenderer.send('export', exp);
@@ -200,4 +202,5 @@ let launchEditor = () => {
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit
 	alert("Successfully modified save file.");
+	$("#exit").text("Save");
 });

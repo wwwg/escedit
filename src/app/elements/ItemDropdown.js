@@ -1,7 +1,7 @@
 const ItemDict = require('../lib/ItemDict');
 class ItemDropdown {
 	constructor(initItem, id) {
-		if (initItem.contains('_')) {
+		if (initItem.includes('_')) {
 			initItem = initItem.split('_')[0];
 		}
 		this.initial = initItem;
