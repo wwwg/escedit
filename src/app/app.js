@@ -4,6 +4,7 @@ const {
 	ipcRenderer
 } = require('electron');
 const Export = require('../Export');
+const isDurable = require('../lib/isDurable');
 window.currsav = null; // Current active save
 window.selectedTab = null; // Current tab selected
 window.newSav = null; // New save tree
@@ -143,6 +144,9 @@ let launchEditor = () => {
 		dropdown.elm.change(e => {
 			const slotNumber = parseInt(e.target.parentElement.id.split('-')[2]);
 			const id = parseInt($(e.target).val());
+			if (isDurable(id)) {
+				id += "_100"; // Make sure item has 100% durability
+			}
 			if (id == -1) {
 				// Empty slot, change to none
 				newSav["Player"]["Inv"][slotNumber - 1] = "";
