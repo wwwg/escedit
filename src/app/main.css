@@ -143,6 +143,6 @@ option {
 	margin-bottom: 2%;
 	margin-right: 2%;
 }
-.job-label, .job-selector {
+.job-label, .job-selector, .desk-selector {
 	font-size: 125%;
 }
