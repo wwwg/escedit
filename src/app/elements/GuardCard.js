@@ -70,7 +70,11 @@ class GuardCard {
 		this.ibox.elm.css("float", "right");
 		this.ibox.elm.change(e => {
 			const guardId = e.target.parentElement.id.split('-')[2],
-				newItem = $(e.target).val() + "_100";
+				newItem = parseInt($(e.target).val());
+			if (isDurable(newItem)) {
+				newItem = newItem + "_100";
+			}
+			newItem = newItem.toString();
 			newSav["Guard_Inven"][guardId][0] = newItem;
 		})
 	}
