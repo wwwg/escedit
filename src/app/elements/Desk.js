@@ -9,4 +9,14 @@ window.initDeskTab = () => {
 		$("#desk-panel").append(container);
 		$(dropdown.elm).addClass("desk-dropdown");
 	}
+	$(`.desk-dropdown`).change(e => {
+		const id = parseInt(e.target.id.split('-')[2]),
+			newItem = $(e.target).val();
+		let cnt = newSav["Desks"][0][3].split('?');
+		if (isDurable(newItem)) {
+			newItem += "_100"; // Assign 100 durability
+		}
+		cnt[id] = newItem;
+		newSav["Desks"][0][3] = cnt.join('?'); // Rejoin array to recreate desk object
+	});
 }
