@@ -10,9 +10,9 @@ window.initDeskTab = () => {
 		$(dropdown.elm).addClass("desk-dropdown");
 	}
 	$(`.desk-dropdown`).change(e => {
-		const id = parseInt(e.target.id.split('-')[2]),
-			newItem = $(e.target).val();
-		let cnt = newSav["Desks"][0][3].split('?');
+		let id = parseInt(e.target.id.split('-')[2]),
+			newItem = parseInt($(e.target).val()),
+			cnt = newSav["Desks"][0][3].split('?');
 		if (isDurable(newItem)) {
 			newItem += "_100"; // Assign 100 durability
 		}
