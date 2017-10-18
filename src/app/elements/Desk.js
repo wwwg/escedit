@@ -1,4 +1,4 @@
-window.initDesksTab = () => {
+window.initDeskTab = () => {
 	let desks = newSav["Desks"]; // For convenience
 	for (const deskId in desks) {
 		let name = '(none)';
