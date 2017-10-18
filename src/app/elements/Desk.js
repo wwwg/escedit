@@ -14,7 +14,8 @@ window.initDeskTab = () => {
 			newItem = parseInt($(e.target).val()),
 			cnt = newSav["Desks"][0][3].split('?');
 		if (isDurable(newItem)) {
-			newItem += "_100"; // Assign 100 durability
+			 // Assign 100 durability
+			newItem += "_100";
 		}
 		cnt[id] = newItem;
 		newSav["Desks"][0][3] = cnt.join('?'); // Rejoin array to recreate desk object
