@@ -62,9 +62,11 @@ s.on('load', () => {
 	$("#exit").click(e => {
 		// Alert user that we're working on saving
 		$("#exit").text("Saving...");
-		// Export save
-		const exp = new Export(currsav.nameContent, newSav, currsav.num, s);
-		ipcRenderer.send('export', exp);
+		setTimeout(() => {
+			// Export save
+			const exp = new Export(currsav.nameContent, newSav, currsav.num, s);
+			ipcRenderer.send('export', exp);
+		}, 100);
 	});
 	$("#name-box").on("input", () => { newSav["Player"]["Name"] = $("#name-box").val(); });
 	$("#day-box").on("input", () => { newSav["Prison"]["Day"] = $("#day-box").val(); });
