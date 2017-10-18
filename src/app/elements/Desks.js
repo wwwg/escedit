@@ -1,0 +1,3 @@
+window.initDesksTab = () => {
+	// TODO
+}

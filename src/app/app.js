@@ -204,6 +204,15 @@ let launchEditor = () => {
 			jcard.addTo("#job-cards");
 		}
 	}
+	// Desks tab
+	if (window.initDesksTab) {
+		window.initDesksTab();
+	} else {
+		console.warn("window.initDesksTab is not present. Retrying in 200ms...");
+		setTimeout(() => {
+			window.initDesksTab();
+		}, 200);
+	}
 }
 ipcRenderer.on('writeFinish', () => {
 	// Ready to exit
