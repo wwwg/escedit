@@ -143,7 +143,7 @@ let launchEditor = () => {
 		dropdown.addTo(`#inven-dropdown-${i}`);
 		dropdown.elm.change(e => {
 			const slotNumber = parseInt(e.target.parentElement.id.split('-')[2]);
-			const id = parseInt($(e.target).val());
+			let id = parseInt($(e.target).val());
 			if (isDurable(id)) {
 				id += "_100"; // Make sure item has 100% durability
 			}
