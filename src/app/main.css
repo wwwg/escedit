@@ -159,6 +159,13 @@ option {
 	border: 2px solid white;
 	border-radius: 4px;
 	padding: 5px;
+	padding-top: 1vw;
+	/* Positioning */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95%;
 }
 .desk-entry {
 	float: left;
