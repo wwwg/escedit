@@ -3,7 +3,7 @@ window.initDeskTab = () => {
 	for (var i = 0; i < deskContent.length; ++i) {
 		let container = $(`<span class="desk-entry"></span>`),
 			label = $(`<span class="desk-label">${i + 1} &nbsp;</span>`),
-			dropdown = new ItemDropdown(deskContent[i]);
+			dropdown = new ItemDropdown(deskContent[i], `desk-selector-${i.toString()}`);
 		container.append(label);
 		dropdown.addTo(container);
 		$("#desk-panel").append(container);
