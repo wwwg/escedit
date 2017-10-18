@@ -3,8 +3,10 @@ class JobCard {
 		this.val = jobVal;
 		this.name = jobName;
 		this.elm = $(`<center class="job-card">
-			<span class="job-label">${jobName}</span> &nbsp; <select id="job-${jobName}"></select><br>
-		</center><br>`);
+			<span class="job-label">${jobName}</span>
+			<br><br>
+			<select id="job-${jobName}" class="job-selector"></select><br>
+		</center>`);
 	}
 	addTo(parent) {
 		$(parent).append(this.elm);
