@@ -151,6 +151,7 @@ option {
 	font-size: 120%;
 	padding-bottom: 1px;
 	border-bottom: 2px solid white;
+	margin: 1%;
 }
 #desk-panel {
 	box-sizing: border-box;
@@ -161,8 +162,8 @@ option {
 }
 .desk-entry {
 	float: left;
-	margin-right: 0.5vw;
-	margin-bottom: 0.5vw;
+	margin-right: 1vw;
+	margin-bottom: 1vw;
 }
 .desk-label {
 	float: left;
