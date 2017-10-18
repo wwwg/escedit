@@ -1,6 +1,9 @@
 const ItemDict = require('../lib/ItemDict');
 class ItemDropdown {
 	constructor(initItem, id) {
+		if (initItem.contains('_')) {
+			initItem = initItem.split('_')[0];
+		}
 		this.initial = initItem;
 		if (!id) {
 			this.elm = $(`<select class="item-dropdown"></select>`);
