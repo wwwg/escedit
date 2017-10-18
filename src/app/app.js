@@ -205,10 +205,10 @@ let launchEditor = () => {
 		}
 	}
 	// Desks tab
-	if (window.initDesksTab) {
+	if (window.initDeskTab) {
 		window.initDeskTab();
 	} else {
-		console.warn("window.initDesksTab is not present. Retrying in 200ms...");
+		console.warn("window.initDeskTab is not present. Retrying in 200ms...");
 		setTimeout(() => {
 			window.initDeskTab();
 		}, 200);
