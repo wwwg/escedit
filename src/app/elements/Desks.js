@@ -9,7 +9,7 @@ window.initDesksTab = () => {
 			name = "Your desk";
 		}
 		$("#desk-selector").append(`
-			<option value="${deskId}">
+			<option value="${deskId}" class="desk-choice">
 				${name}
 			</option>
 		`);
