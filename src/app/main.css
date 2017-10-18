@@ -152,3 +152,21 @@ option {
 	padding-bottom: 1px;
 	border-bottom: 2px solid white;
 }
+#desk-panel {
+	box-sizing: border-box;
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 4px;
+	padding: 5px;
+}
+.desk-entry {
+	float: left;
+	margin-right: 0.5vw;
+	margin-bottom: 0.5vw;
+}
+.desk-label {
+	float: left;
+}
+.desk-dropdown {
+	float: right;
+}
