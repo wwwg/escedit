@@ -28,7 +28,7 @@ app.on('ready', () => {
 		protocol: 'file:',
 		slashes: true
 	}));
-	w.webContents.executeJavascript(`
+	w.webContents.executeJavaScript(`
 		let path = require('path');
 		module.paths.push(path.resolve('node_modules'));
 		module.paths.push(path.resolve('../node_modules'));
