@@ -28,6 +28,7 @@ app.on('ready', () => {
 		protocol: 'file:',
 		slashes: true
 	}));
+	/*
 	w.webContents.executeJavaScript(`
 		let path = require('path');
 		module.paths.push(path.resolve('node_modules'));
@@ -38,6 +39,7 @@ app.on('ready', () => {
 		module.paths.push(path.resolve(__dirname, '..', '..', 'app.asar', 'node_modules'));
 		path = undefined;
 	`);
+	*/
 	if (ENABLE_DEV_TOOLS) {
 		w.webContents.openDevTools();
 	}
