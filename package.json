@@ -7,7 +7,8 @@
 	"main": "src/index.js",
 	"scripts": {
 		"init": "chmod +x ./init.sh && ./init.sh",
-		"start": "clear && electron ."
+		"start": "clear && electron .",
+		"build": "electron-builder --dir"
 	},
 	"devDependencies": {
 		"electron": "1.7.9",
