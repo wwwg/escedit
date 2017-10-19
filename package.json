@@ -8,7 +8,7 @@
 	"scripts": {
 		"init": "chmod +x ./init.sh && ./init.sh",
 		"start": "clear && electron .",
-		"build": "electron-builder --dir"
+		"build": "chmod +x ./build.sh && ./build.sh"
 	},
 	"devDependencies": {
 		"electron": "1.7.9",
