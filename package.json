@@ -10,6 +10,9 @@
 		"start": "clear && electron .",
 		"build": "chmod +x ./build.sh && ./build.sh"
 	},
+	"dependencies": {
+		"mcrypt": "*"
+	},
 	"devDependencies": {
 		"electron": "1.7.9",
 		"mcrypt": "*",
