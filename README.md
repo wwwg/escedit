@@ -7,4 +7,4 @@ escedit is a save editor for the game "The Escapists". escedit allows you to mod
 - Guard keys
 - Jobs
 
-![Screenshot 1][something will be here in a moment]
+![Screenshot 1](https://github.com/wwwg/escedit/raw/master/assets/screenshot1.png)
