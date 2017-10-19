@@ -18,8 +18,13 @@
 	"build": {
 		"productName": "escedit",
 		"directories": {
-			"buildResources": "src/",
-			"output": "build/"
-		}
+			"build": "src/",
+			"output": "build/",
+			"app": "."
+		},
+		"files": [
+			"src/*",
+			"src/**/*"
+		]
 	}
 }
