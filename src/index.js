@@ -1,4 +1,4 @@
-const ENABLE_DEV_TOOLS = true,
+const ENABLE_DEV_TOOLS = false,
 	Session = require('./Session'),
 	url = require('url'),
 	path = require('path'), {
@@ -28,6 +28,15 @@ app.on('ready', () => {
 		protocol: 'file:',
 		slashes: true
 	}));
+	w.webContents.executeJavascript(`
+		let path = require('path');
+		module.paths.push(path.resolve('node_modules'));
+		module.paths.push(path.resolve(__dirname, '..', '..', 'electron', 'node_modules'));
+		module.paths.push(path.resolve(__dirname, '..', '..', 'electron.asar', 'node_modules'));
+		module.paths.push(path.resolve(__dirname, '..', '..', 'app', 'node_modules'));
+		module.paths.push(path.resolve(__dirname, '..', '..', 'app.asar', 'node_modules'));
+		path = undefined;
+	`);
 	if (ENABLE_DEV_TOOLS) {
 		w.webContents.openDevTools();
 	}

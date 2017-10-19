@@ -18,7 +18,7 @@
 	"build": {
 		"productName": "escedit",
 		"directories": {
-			"build": "src/",
+			"buildResources": "src/",
 			"output": "build/",
 			"app": "."
 		},
