@@ -7,7 +7,6 @@
 	"main": "src/index.js",
 	"scripts": {
 		"init": "chmod +x ./init.sh && ./init.sh",
-		"start": "clear && electron .",
 		"build": "chmod +x ./build.sh && ./build.sh"
 	},
 	"dependencies": {
