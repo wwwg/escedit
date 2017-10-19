@@ -14,5 +14,12 @@
 		"electron": "1.7.9",
 		"mcrypt": "*",
 		"electron-builder": "*"
+	},
+	"build": {
+		"productName": "escedit",
+		"directories": {
+			"buildResources": "src/",
+			"output": "build/"
+		}
 	}
 }
